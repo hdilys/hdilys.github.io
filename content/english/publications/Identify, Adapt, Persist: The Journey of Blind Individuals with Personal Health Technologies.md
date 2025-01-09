@@ -1,12 +1,15 @@
 ---
-title: "How to build an Application with modern Technology"
+title: "Identify, Adapt, Persist: The Journey of Blind Individuals with Personal Health Technologies"
 meta_title: ""
 description: "this is meta description"
-date: 2022-04-04T05:00:00Z
+date: 2024-05-15T05:00:00Z
 image: "/images/image-placeholder.png"
-categories: ["Technology", "Data"]
-author: "Sam Wilson"
-tags: ["technology", "tailwind"]
+categories: ["Software"]
+author: "Jarrett G.W. Lee, Bongshin Lee, Soyoung Choi, JooYoung Seo, Eun Kyoung Choe"
+highlightauthor: 
+    - "Bongshin Lee"
+journal: PACM IMWUT (UbiComp 2024)
+tags: ["2024"]
 draft: false
 ---
 

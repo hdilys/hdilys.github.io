@@ -3,9 +3,29 @@
 
 
   <section class="section-sm">
-    <div class="container">
+    <div class="container flex justify-center">
       <div class="row">
-        <div class="md:col-10 lg:col-6 mx-auto">
+        <div class="md:col-12 mx-auto text-center">
+          <h2 class="h3 mb-6">Contact Info</h2>
+          <div class="content mb-16 flex justify-center items-center">
+            <!-- 왼쪽 이미지 -->
+            {{ $image:= .Params.image }}
+            {{ if $image }}
+              <div class="w-2/5">
+                {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "object-cover w-full h-full object-center" "size" "200x200") }}
+              </div>
+            {{ end }}
+            <!-- 오른쪽 긴 글 -->
+            <div class="w-1/2 pl-16 text-left">
+              <h5 class="container-header text-[#002244] dark:text-[#FFFFFF]">
+                {{ .Params.contactlocationHeader }}
+              </h5>
+              <p class="mb-8">
+                {{ .Params.contactlocation | markdownify}}
+              </p>
+            </div>
+          </div>
+
           <form action="{{ site.Params.contact_form_action }}" method="POST">
             <div class="mb-6">
               <label for="name" class="form-label">
@@ -60,7 +80,7 @@
     {{ end }}
   {{ end }}
 
-  {{ with site.Params.subscription }}
+  {{/*  {{ with site.Params.subscription }}
     {{ if .enable }}
       <!-- subscription form -->
       <form
@@ -109,7 +129,7 @@
         src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
       <!-- /subscription form -->
     {{ end }}
-  {{ end }}
+  {{ end }}  */}}
 
   {{ if site.Params.google_map.enable }}
     {{ $gmap:= resources.Get "plugins/maps/google-map.js" }}

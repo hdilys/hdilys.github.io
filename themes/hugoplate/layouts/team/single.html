@@ -1,0 +1,94 @@
+{{ define "main" }}
+  <section class="section-sm pb-0">
+    <div class="container">
+      <div
+        class="row border-border dark:border-darkmode-border justify-center border-b pb-14">
+        {{/*  <div class="lg:col-12 text-center">
+          {{ $image:= .Params.image }}
+          {{ if $image }}
+            {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mx-auto" "Size" "200x200") }}
+          {{ else if .Params.Email }}
+            <img
+              class="mx-auto"
+              alt="{{ .Title }}"
+              height="200"
+              width="200"
+              src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon" />
+          {{ end }}
+          <h1 class="h3 mt-10">{{ .Title }}</h1>
+          <div class="content mt-6">
+            {{ .Params.Keyword }}
+          </div>
+          <div class="content mt-6">
+            {{ .Content }}
+          </div>
+          <ul class="social-icons ml-4 mt-10 text-center">
+            {{ range .Params.social }}
+              <li>
+                <a
+                  href="{{ .link | safeURL }}"
+                  target="_blank"
+                  rel="noopener nofollow">
+                  <span class="sr-only">{{ .title }}</span>
+                  <i class="{{ .icon }}"></i>
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>  */}}
+        <div class="flex items-center rounded p-8">
+          <div class="flex-shrink-0">
+        
+            {{ $image:= .Params.image }}
+            {{ if $image }}
+              {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "w-[300px] h-full mx-auto mr-8 object-cover rounded" "size" "300x300") }}
+            {{ else if .Params.Email }}
+            <img
+              class="mx-auto mb-6 rounded"
+              alt="{{ .Title }}"
+              height="300"
+              width="300"
+              src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon" />
+            {{ end }}
+          </div>
+          
+          <div class="ml-8 mt-4">
+            <h4 class="mb-10">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h4>
+            <div class="content mb-1 text-[#002244] dark:text-[#A5ACAF] font-semibold text-lg">
+              {{ .Params.roles }}
+            </div>
+            {{/*  <div class="content">
+              {{ .Params.Keyword }} 
+            </div>  */}}
+            <p class="content mb-1">
+              {{ .Params.Keyword }}
+              {{ .Content }}
+            </p>
+            <ul class="social-icons mt-4">
+              {{ range .Params.social }}
+                <li>
+                  <a href="{{ .link | safeURL }}" target="_blank" rel="noopener nofollow">
+                    <span class="sr-only">{{ .title }}</span>
+                    <i class="{{ .icon }}"></i>
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="row pb-16 pt-14">
+        {{ $filterByAuthor := where site.RegularPages "Params.author" "==" .Title }}
+        {{ range $filterByAuthor }}
+          <div class="md:col-6 lg:col-4 mb-12">
+            {{ partial "components/blog-card" . }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

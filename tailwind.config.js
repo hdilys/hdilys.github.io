@@ -99,5 +99,6 @@ module.exports = {
         5: "3rem",
       },
     }),
+    require('@tailwindcss/aspect-ratio'),
   ],
 };

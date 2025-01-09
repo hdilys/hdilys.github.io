@@ -1,12 +1,15 @@
 ---
-title: "How to build an Application with modern Technology"
+title: "WonderFlow: Narration-Centric Design of Animated Data Videos"
 meta_title: ""
 description: "this is meta description"
-date: 2022-04-04T05:00:00Z
+date: 2024-06-06T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Architecture"]
-author: "John Doe"
-tags: ["silicon", "technology"]
+author: "Yun Wang, Leixian Shen, Zhengxin You, Xinhuan Shu, Bongshin Lee, John Thompson, Haidong Zhang, Dongmei Zhang"
+highlightauthor: 
+    - "Bongshin Lee"
+journal: IEEE TVCG, in press.
+tags: ["2024"]
 draft: false
 ---
 

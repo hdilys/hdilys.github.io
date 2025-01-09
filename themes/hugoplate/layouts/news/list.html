@@ -1,0 +1,42 @@
+{{ define "main" }}
+{{ partial "page-header" . }}
+
+  {{ with site.GetPage "sections/testimonial" }}
+    {{ if .Params.enable }}
+      <section class="section-sm">
+        <div class="container">
+          <div class="row">
+            <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+              <h2 class="h3 mb-4">
+                {{ .Title | markdownify }}
+              </h2>
+              <p>
+                {{ .Params.description | markdownify }}
+              </p>
+            </div>
+            <div class="row mb-8 px-8 mr-4 ml-4">
+              <h4 class="mb-4">2024</h4>
+
+              <div class="col-12">
+                <div class="testimonial-list">
+                  {{ range .Params.testimonials }}
+                    <div class="testimonial-item">
+                      <div class="flex items-center mb-2">
+                        <h4 class="text-lg font-semibold mr-4">
+                          {{ .day }}
+                        </h4>
+                        <blockquote class="text-gray-700 dark:text-gray-300">
+                          {{ .content | markdownify }}
+                        </blockquote>
+                      </div>
+                    </div>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+{{ end }}

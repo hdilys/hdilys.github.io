@@ -1,7 +1,9 @@
 ---
-title: John Doe
-email: johndoe@email.com
+title: Seongjae Bae
+roles: Intern
+email: samwilson@email.com
 image: "/images/avatar.png"
+keyword: "Human-Data Interaction, Mobile Visualization"
 description: this is meta description
 social:
   - name: github

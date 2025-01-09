@@ -1,53 +1,48 @@
 ---
 # Banner
 banner:
-  title: "The Ultimate Starter Template You Need To Start Your Hugo Project"
-  content: "Hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
-  image: "/images/banner.png"
+  title: "Human-Data Interaction Lab"
+  content: "The Human-Data Interaction Lab is a research group within the Department of Computer Science at Yonsei University, dedicated to exploring the interaction between data and humans."
+  image: "/images/service-2.png"
   button:
-    enable: true
+    enable: false
     label: "Get Started For Free"
-    link: "https://github.com/zeon-studio/hugoplate"
+    link: ""
 
 # Features
 features:
-  - title: "What's Included in Hugoplate"
+  - title: "Research Topics"
     image: "/images/service-1.png"
-    content: "Hugoplate is a comprehensive starter template that includes everything you need to get started with your Hugo project. What's Included in Hugoplate"
+    content: "Our lab's research philosophy is rooted in the belief that \"data should go beyond efficiency to become a tool that enriches people and society.\" To realize this vision, the Human-Data Interaction Lab focuses on the following core research areas"
     bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Hugo and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
+      - "human-data interaction"
+      - "human-computer/AI interaction"
+      - "data visualization"
+      - "inclusive data experiences."
     button:
       enable: false
       label: "Get Started Now"
       link: "#"
 
-  - title: "Discover the Key Features Of Hugo"
-    image: "/images/service-2.png"
-    content: "Hugo is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
+  - title: "Join Our Research Team"
+    image: "/images/banner.png"
+    content: "We are always looking for passionate and talented students to join our research group."
     bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
-    button:
-      enable: true
-      label: "Get Started Now"
-      link: "https://github.com/zeon-studio/hugoplate"
-
-  - title: "The Top Reasons to Choose Hugo for Your Hugo Project"
-    image: "/images/service-3.png"
-    content: "With Hugo, you can build modern and content-focused websites without sacrificing performance or ease of use."
-    bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Hugo a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
+      - " If you are interested in exploring human-data interaction, data visualization, or human-centered AI and want to contribute to innovative research in these fields, feel free to reach out to us (anyone in the lab) via email!"
+      - "Please note that we have limited spots available, so be sure you are ready to commit to challenging and meaningful work."
+      - "Strong skills in programming (Python, JavaScript, R, or any language you are most comfortable with) and a curiosity for data-driven problem-solving are highly encouraged before contacting us."
     button:
       enable: false
       label: ""
       link: ""
+
+# BannerPublication
+bannerpublication:
+  title: "Latest Pubications"
+  content: ""
+  image: "/images/banner.png"
+  button:
+    enable: true
+    label: "Read More"
+    link: "https://github.com/zeon-studio/hugoplate"
 ---

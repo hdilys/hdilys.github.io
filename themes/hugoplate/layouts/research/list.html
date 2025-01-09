@@ -1,0 +1,49 @@
+{{ define "main" }}
+{{ partial "page-header" . }}
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-10 lg:col-7 text-center">
+          {{/*  {{ partial "image" (dict "Src" .Params.image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6" "Size" "200x200") }}  */}}
+          <h2 class="h3 mb-6">{{ .Title }}</h2>
+            <div class="content mb-16">{{ .Content }}</div>
+            
+            <!-- categories -->
+            {{ if isset site.Taxonomies "categories" }}
+            {{ if not (eq (len site.Taxonomies.categories) 0) }}
+            <div class="mb-8">
+              <h5 class="mb-6">{{ "Research Topics" }}</h5>
+              <div class="rounded p-8">
+                <ul class="space-y-4">
+                  {{ range $name, $items := site.Taxonomies.categories }}
+                    <li>
+                      <a
+                        class="hover:text-primary dark:hover:text-darkmode-primary {{ if (and (eq $.Page.Kind `term`) (eq $.Page.Type `categories`) (eq $.Page.Title .Page.Title)) }}
+                          active
+                        {{ end }} flex justify-between"
+                        href="{{ .Page.RelPermalink }}">
+                        {{ .Page.Title }}
+                      </a>
+
+                      <div class="bars-container flex items-center justify-between">
+                        {{ $items := $items }}
+                        {{ $percentage := mul (len $items) 10 }} <!-- 예를 들어, 각 항목당 10%로 계산 -->
+                          <div class="bar bg-gray-100 rounded" style="width: 95%; height: 10px; position: relative;">
+                          <div class="bar rounded" style="width: {{ $percentage }}%; background-color: #002244; height: 100%; position: absolute; top: 0; left: 0;"></div>
+                        </div>
+                        <span class="text-sm text-gray-600">{{ len $items }}</span>
+                      </div>
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            </div>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
+
