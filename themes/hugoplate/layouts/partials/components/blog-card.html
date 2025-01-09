@@ -1,11 +1,12 @@
 <div class="bg-body dark:bg-darkmode-body flex">
-  {{ $image:= .Params.image }}
+  {{/*  // blog-card image 유무 설정  */}}
+  {{/*  {{ $image:= .Params.image }}
   {{ if $image }}
     <div class="w-1/6">
       {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mb-6 w-full border rounded") }}
     </div>
-  {{ end }}
-  <div class="w-5/6 pl-6">
+  {{ end }}  */}}
+  <div class="pl-12">
     <h6 class="mb-3">
       <a href="{{ .RelPermalink }}">
         {{ .Title }}
@@ -13,7 +14,7 @@
     </h6>
     {{ $categories:= .Params.categories }}
     {{ if $categories }}
-    <ul class="mb-4 flex flex-col space-y-2">
+    <ul class="mb-2 flex flex-col space-y-1">
       <li class="mr-4 inline-block">
           {{ $authors := .Params.author }}
           {{ $highlightAuthor := .Params.highlightauthor }}
@@ -34,8 +35,12 @@
             <p class="mr-6">
               {{ .Params.journal }}
             </p>
-            <i class="fa-regular fa-folder mr-1"></i>
-            <div class="flex items-center space-x-1">
+
+
+                        {{/*  카테고리  */}}
+
+            {{/*  <i class="fa-regular fa-folder mr-1"></i>  */}}
+            {{/*  <div class="flex items-center space-x-1">
               {{ range $i, $p := $categories }}
                 <a
                   href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/"
@@ -45,7 +50,7 @@
                   {{ end }}
                 </a>
               {{ end }}
-            </div>
+            </div>  */}}
           </div>
         </li>
       </ul>

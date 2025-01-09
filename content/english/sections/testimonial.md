@@ -7,7 +7,7 @@ description: "Check out the latest news and Lab logs from the Human-Data Interac
 testimonials:
   - name: "Junhyun Bang"
     type: "Welcome"
-    color: "#ff5733"
+    color: "#69BE28"
     designation: "Undergraduate Student Intern"
     avatar: "/images/avatar-sm.png"
     day: "2024-12-26"
@@ -23,7 +23,7 @@ testimonials:
 
   - name: "Seongjae Bae"
     type: "Welcome"
-    color: "#ff5733"
+    color: "#69BE28"
     designation: "Undergraduate Student Intern"
     avatar: "/images/avatar-sm.png"
     day: "2024-11-08"

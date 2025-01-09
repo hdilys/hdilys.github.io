@@ -25,6 +25,16 @@
                         <h4 class="text-lg font-semibold mr-4">
                           {{ .day }}
                         </h4>
+                        <!-- Tag -->
+                        {{ if eq .type "Welcome" }}
+                        <div class="flex items-center mr-4">
+                            <p class="font-primary font-bold" style="color: {{ .color }};">
+                              {{ .type }}
+                            </p>
+                        </div>
+                        {{ end }}
+
+                        
                         <blockquote class="text-gray-700 dark:text-gray-300">
                           {{ .content | markdownify }}
                         </blockquote>

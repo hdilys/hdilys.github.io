@@ -1,8 +1,8 @@
 <div class="text-left">
   {{ $image:= .Params.image }}
   {{ if $image }}
-    <div class="aspect-w-4 aspect-h-4 mb-6">
-      {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "object-cover w-full h-full object-center" "size" "200x200") }}
+    <div class="aspect-square mb-6">
+      {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "object-cover w-full h-full object-center rounded-lg" "size" "200x200") }}
     </div>
   {{/*  {{ else if .Params.Email }}
     <div class="aspect-w-4 aspect-h-3 mb-6">
