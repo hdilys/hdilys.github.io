@@ -1,16 +1,15 @@
 ---
-title: "Data Formulator: AI-powered Concept-driven Visualization Authoring"
+title: "Authoring Data-Driven Chart Animations through Direct Manipulation"
 meta_title: ""
 description: "this is meta description"
-date: 2023-10-27T05:00:00Z
+date: 2025-01-02T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Technology", "Data"]
-author: "Chenglong Wang, John R. Thompson, Bongshin Lee"
+author: "Yuancheng Shen, Yue Zhao, Yunhai Wang, Tong Ge, Haoyan Shi, Bongshin Lee"
 highlightauthor: 
     - "Bongshin Lee"
-journal: IEEE CG&A
-honor: [Best Paper Honorable Mention Award]
-tags: ["2024"]
+journal: IEEE TVCG, in press.
+tags: ["2025"]
 draft: false
 ---
  
