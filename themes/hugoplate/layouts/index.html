@@ -1,13 +1,17 @@
 {{ define "main" }}
   <!-- Banner -->
   {{ with .Params.banner }}
-    <section class="section pt-14">
-      <div class="container">
-        <div class="row justify-center">
+    <section class="section-sm">
+      <div class="container items-center">
+        <div class="row items-center justify-center" >
           <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <h1 class="mb-4 text-h3 lg:text-h1">
+            {{/*  <h1 class="mb-4 text-h3 lg:text-h1">
               {{ .title | markdownify }}
-            </h1>
+            </h1>  */}}
+            <h1 class="mb-4 text-h3 lg:text-h1">
+              <span class="bg-gradient-to-r from-[#002244] to-[#69BE28] text-transparent bg-clip-text">Human-Data</span>
+              <span class="text-[#000000] dark:text-white">Interaction Lab</span>
+            </h1>        
             <p class="mb-8">
               {{ .content | markdownify }}
             </p>
@@ -27,7 +31,7 @@
           </div>
           <div class="col-12">
             <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-            <dotlottie-player src="https://lottie.host/557171b1-5631-44ba-90f8-204d1452b68e/IfiwlamHBZ.lottie" background="transparent" speed="0.7" style="width: 75%; height: 75%; display: block; margin: 0 auto;" loop autoplay></dotlottie-player>
+            <dotlottie-player src="https://lottie.host/557171b1-5631-44ba-90f8-204d1452b68e/IfiwlamHBZ.lottie" background="transparent" speed="0.7" style="width: 55%; height: 55%; display: block; margin: 0 auto;" loop autoplay></dotlottie-player>
           </div>
         </div>
       </div>
@@ -57,6 +61,14 @@
               {{ .content | markdownify }}
             </p>
             <ul>
+              {{ range $index, $bullet := .bullet }}
+                <li class="relative mb-4 pl-6">
+                  <i class="fa fa-check absolute left-0 top-1.5"></i>
+                  <h6 class="mb-4" style="text-decoration: underline; text-decoration-color: rgb({{ index (slice "0, 192, 232" "106, 13, 173" "255, 166, 43" "255, 165, 0" "128, 0, 128") (mod $index 5) }}); text-underline-offset: 4px;">
+                    {{ $bullet | markdownify }}
+                  </h6>
+                </li>
+              {{ end }}
               {{ range .bulletpoints }}
                 <li class="relative mb-4 pl-6">
                   <i class="fa fa-check absolute left-0 top-1.5"></i>
@@ -79,8 +91,44 @@
   {{ end }}
   <!-- /Features -->
 
+  <section class="section pt-14">
+    <div class="container">
+        <div class="row justify-center">
+          <h1 class="mb-16 text-h3 lg:text-h1 text-center">
+            Latest Publications
+          </h1>
+          <div class="lg:col-7 md:col-9 mb-8 text-left">
+              <div class="row mb-4">
+                  {{ $pages2025 := where .Site.RegularPages "File.Dir" "publications/2025/" }}
+                  {{ $sortedPages2025 := sort $pages2025 "Date" "desc" }}
+
+                  {{ range first 3 $sortedPages2025 }}
+                      <div class="md:col-12 mb-8">
+                          {{ partial "components/blog-card" . }}
+                      </div>
+                  {{ else }}
+                      <p>No posts available for 2025.</p>
+                  {{ end }}
+              </div>
+              <!-- 버튼 중앙 정렬 -->
+              <div class="text-center">
+                <a class="btn btn-primary"
+                    href="/publications"
+                    style="width: auto; padding: 8px 12px;">
+                    View All Publications
+                    <i class="fa fa-arrow-right pl-2"></i>
+                </a>
+              </div>
+          </div>
+          
+
+        </div>
+    </div>
+  </section>
+
+  
   <!-- BannerPublication -->
-  {{ with .Params.bannerpublication }}
+  {{/*  {{ with .Params.bannerpublication }}
   <section class="section pt-14">
     <div class="container">
       <div class="row justify-center">
@@ -88,6 +136,7 @@
           <h1 class="mb-4 text-h3 lg:text-h1">
             {{ .title | markdownify }}
           </h1>
+          
           <p class="mb-8">
             {{ .content | markdownify }}
           </p>
@@ -108,13 +157,15 @@
       </div>
     </div>
   </section>
-{{ end }}
+{{ end }}  */}}
 <!-- /BannerPublication -->
+
+
 
   <!-- Testimonials -->
   {{ with site.GetPage "sections/testimonial" }}
     {{ if .Params.enable }}
-      <section class="section bg-gradient-to-t from-white to-gray-100 dark:from-gray-900 dark:to-gray-700">
+      <section class="section bg-gradient-to-t from-white to-gray-100 dark:from-darkmode-body dark:to-darkmode-body">
         <div class="container">
           <div class="row">
             <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">

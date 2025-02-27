@@ -5,45 +5,63 @@ description: "Check out the latest news and Lab logs from the Human-Data Interac
 
 # Testimonials
 testimonials:
-  - name: "Junhyun Bang"
+  - name: "Taewoon Yoo"
     type: "Welcome"
     color: "#69BE28"
-    designation: "Undergraduate Student Intern"
+    designation: "M.S. Student"
     avatar: "/images/avatar-sm.png"
-    day: "2024-12-26"
-    content: "Junhyun will join our group as an undergraduate research intern. Welcome!"
+    day: "2025-03-01"
+    content: "Taewoon will join our group as an M.S. student. Welcome!"
 
-  - name: "Bongshin Lee"
-    type: "Keynote"
-    color: "#007BFF"
-    designation: "Professor"
-    avatar: "/images/avatar-sm.png"
-    day: "2024-11-09"
-    content: "Professor Bongshin Lee delivered a keynote on 'Human-Data Interaction for Inclusive Data Experiences' at Chinese CHI 2024"    
-
-  - name: "Seongjae Bae"
+  - name: "Jehu Ahn"
     type: "Welcome"
     color: "#69BE28"
-    designation: "Undergraduate Student Intern"
+    designation: "Intern"
     avatar: "/images/avatar-sm.png"
-    day: "2024-11-08"
-    content: "Starting next March, Seongjae will continue his studies at our group as a masters student. Welcome!"
+    day: "2025-03-01"
+    content: "Jehu will join our group as an Intern. Welcome!"
 
   - name: "Bongshin Lee"
     type: "Publication"
-    color: "#F39C12"
+    color: "#0078D7"
     designation: "Professor"
     avatar: "/images/avatar-sm.png"
-    day: "2024-11-05"
-    content: "Authoring Data-Driven Chart Animations paper accepted at IEEE TVCG 2024."
-    
+    day: "2025-02-02"
+    content: "Authoring Data-Driven Chart Animations Through Direct Manipulation paper accepted at IEEE TVCG 2025."
+
   - name: "Bongshin Lee"
-    type: "RE"
-    color: "#F39C12"
+    type: "Publication"
+    color: "#0078D7"
     designation: "Professor"
     avatar: "/images/avatar-sm.png"
-    day: "2024-11-05"
-    content: "Authoring Data-Driven Chart Animations paper accepted at IEEE TVCG 2024."
+    day: "2025-01-01"
+    content: " When Refreshable Tactile Displays Meet Conversational Agents: Investigating Accessible Data Presentation and Analysis with Touch and Speech paper accepted at IEEE TVCG 2025."
+
+  - name: "Yeonsun Yang"
+    type: "Welcome"
+    color: "#69BE28"
+    designation: "Collaborator"
+    avatar: "/images/avatar-sm.png"
+    day: "2025-01-01"
+    content: "Yeonsun will join our group as a collaborator. Welcome!"
+
+  - name: "Ha Eun Jang"
+    type: "Welcome"
+    color: "#69BE28"
+    designation: "Collaborator"
+    avatar: "/images/avatar-sm.png"
+    day: "2025-01-01"
+    content: "Ha Eun will join our group as a collaborator. Welcome!"
+
+  - name: "Jean Young Song"
+    type: "Welcome"
+    color: "#69BE28"
+    designation: "Collaborator"
+    avatar: "/images/avatar-sm.png"
+    day: "2025-01-01"
+    content: "Professor Jean Young Song will join our group as a collaborator. Welcome!"
+
+  
 
 
 # don't create a separate page

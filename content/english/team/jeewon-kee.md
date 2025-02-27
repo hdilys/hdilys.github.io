@@ -1,22 +1,15 @@
 ---
 title: Jee Won Kee
 roles: M.S. Student
-email: williamjacob@email.com
-image: "/images/avatar.png"
-keyword: "Human-Data Interaction, LLM"
+email: jeew.kee@yonsei.ac.kr
+image: "/images/team/Jee Won Kee.png"
+keyword: "Human-Centered LLM"
 description: this is meta description
 social:
-  - name: github
-    icon: fa-brands fa-github
-    link: https://github.com
+  - name: email
+    icon: fa-solid fa-envelope
+    link: mailto:jeew.kee@yonsei.ac.kr
 
-  - name: twitter
-    icon: fa-brands fa-twitter
-    link: https://twitter.com
-
-  - name: linkedin
-    icon: fa-brands fa-linkedin
-    link: https://linkedin.com
 ---
 
 Advisor : Bongshin Lee

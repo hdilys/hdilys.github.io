@@ -3,12 +3,12 @@
     {
       "name": "github",
       "icon": "fab fa-github",
-      "link": "https://www.github.com/"
+      "link": "https://github.com/Human-Data-Interaction-Lab"
     },
     {
-      "name": "home",
-      "icon": "fa-solid fa-house",
-      "link": "https://www.yourhomepage.com/"
+      "name": "mail",
+      "icon": "fa fa-envelope",
+      "link": "mailto:hdil.yonsei@gmail.com"
     }
   ]
 }

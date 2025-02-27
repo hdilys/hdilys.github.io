@@ -62,7 +62,9 @@
             </div>
             <p class="content mb-1">
               {{ .Params.Keyword }}
-              {{ .Content }}
+              {{ with .Content }}
+                  {{ . }}
+              {{ end }}
             </p>
             <ul class="social-icons mt-6 flex justify-center md:justify-start">
               {{ range .Params.social }}

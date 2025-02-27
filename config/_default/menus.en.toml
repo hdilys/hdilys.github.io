@@ -55,7 +55,7 @@ url = "/publications"
 # footer menu
 [[footer]]
 name = "About"
-url = "/about"
+url = "/contact"
 weight = 1
 
 [[footer]]

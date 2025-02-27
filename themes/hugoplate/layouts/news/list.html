@@ -6,7 +6,7 @@
       <section class="section-sm">
         <div class="container">
           <div class="row">
-            {{/*  <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+            <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
               <h2 class="h3 mb-4">
                 {{ .Title | markdownify }}
               </h2>
@@ -15,11 +15,11 @@
               </p>
             </div>
             <div class="row mb-8 px-8 mr-4 ml-4">
-              <h4 class="mb-4">2024</h4>
+              <h4 class="mb-4">2025</h4>
 
               <div class="col-12">
                 <div class="testimonial-list">
-                  {{ range .Params.testimonials }}
+                  {{/*  {{ range .Params.testimonials }}
                     <div class="testimonial-item">
                       <div class="flex items-center mb-2">
                         <h4 class="text-lg font-semibold mr-4">
@@ -40,14 +40,38 @@
                         </blockquote>
                       </div>
                     </div>
+                  {{ end }}  */}}
+                  {{ $sortedTestimonials := sort .Params.testimonials "day" "desc" }}
+                  {{ range $sortedTestimonials }}
+                      <div class="testimonial-item">
+                          <div class="flex items-center mb-2">
+                              <h4 class="text-lg font-semibold mr-4">
+                                  {{ .day }}
+                              </h4>
+                  
+                              <!-- Tag -->
+                              {{ if eq .type "Welcome" }}
+                                  <div class="flex items-center mr-4">
+                                      <p class="font-primary font-bold" style="color: {{ .color }};">
+                                          {{ .type }}
+                                      </p>
+                                  </div>
+                              {{ end }}
+                  
+                              <blockquote class="lg:col-8 text-gray-700 dark:text-gray-300">
+                                  {{ .content | markdownify }}
+                              </blockquote>
+                          </div>
+                      </div>
                   {{ end }}
+                  
                 </div>
               </div>
-            </div>  */}}
+            </div>
 
-            <!-- Coming Soon 텍스트 추가 -->
+            {{/*  <!-- Coming Soon 텍스트 추가 -->
         <h1 class="text-4xl font-bold mb-8">Coming Soon</h1>
-        
+          */}}
           </div>
         </div>
       </section>

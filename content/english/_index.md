@@ -12,13 +12,12 @@ banner:
 # Features
 features:
   - title: "Research Topics"
-    image: "/images/service-1.png"
+    image: "/images/main_research.png"
     content: "Our lab's research philosophy is rooted in the belief that \"data should go beyond efficiency to become a tool that enriches people and society.\" To realize this vision, the Human-Data Interaction Lab focuses on the following core research areas"
-    bulletpoints:
-      - "human-data interaction"
-      - "human-computer/AI interaction"
-      - "data visualization"
-      - "inclusive data experiences."
+    bullet:
+      - "Data Visualization"
+      - "Human-AI Interaction and Collaboration"
+      - "Inclusive Data Experiences"
     button:
       enable: false
       label: "Get Started Now"

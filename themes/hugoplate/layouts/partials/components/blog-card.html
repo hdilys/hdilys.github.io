@@ -8,9 +8,14 @@
   {{ end }}  */}}
   <div class="pl-12">
     <h6 class="mb-3">
-      <a href="{{ .RelPermalink }}">
-        {{ .Title }}
-      </a>
+      {{ with .Params.link }}
+          <a href="{{ . }}" target="_blank" rel="noopener">
+              {{ $.Title }}
+          </a>
+      {{ else }}
+          <span>{{ $.Title }}</span>
+      {{ end }}
+
     </h6>
     {{ $categories:= .Params.categories }}
     {{ if $categories }}
@@ -24,7 +29,7 @@
             {{ if in $highlightAuthor $author }}
               <a href="{{ `team/` | relLangURL }}{{ $author | urlize }}/" class="text-black dark:text-white font-light">{{ $author }}</a>
             {{ else }}
-              <span class="text-gray-400 font-light">{{ $author }}</span>
+              <span class="text-gray-500 font-light">{{ $author }}</span>
             {{ end }}
             <!-- 쉼표 추가 (마지막 요소 제외) -->
             {{ if ne $index (sub (len $splitAuthors) 1) }}, {{ end }}
