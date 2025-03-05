@@ -25,4 +25,6 @@ social:
 
 ---
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr navigation et dolore magna aliqua.
+- Ph.D., Computer Science, Georgia Institute of Technology 
+- M.S., Computer Science and Engineering, Seoul National University
+- B.S., Electrical and Computer Engineering, Seoul National University 

@@ -8,7 +8,7 @@ categories: ["Natural language interfaces (NLIs) for data visualization", "Colla
 author: "Chenglong Wang, John R. Thompson, Bongshin Lee"
 highlightauthor: 
     - "Bongshin Lee"
-journal: IEEE CG&A
+journal: IEEE TVCG
 honor: [Best Paper Honorable Mention Award]
 tags: ["2024"]
 year: 2024

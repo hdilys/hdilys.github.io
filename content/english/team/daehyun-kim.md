@@ -29,6 +29,6 @@ social:
 
 ---
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+- Ph.D., Computer Science, Stanford University  
+- M.S., Computer Science, Stanford University  
+- B.S., Computer Science, California Institute of Technology

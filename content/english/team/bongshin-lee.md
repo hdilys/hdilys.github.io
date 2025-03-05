@@ -21,6 +21,7 @@ social:
   
 ---
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+- Ph.D., Computer Science, University of Maryland  
+- M.S., Computer Science, University of Maryland  
+- M.S., Computer Science, Yonsei University  
+- B.S., Computer Science, Yonsei University  
