@@ -1,7 +1,7 @@
 ---
 title: Eun Kyoung Choe
-roles: Associate Professor
-collaborator: O
+roles: Professor at the University of Maryland
+collaborator: 0
 email: b.lee@yonsei.ac.kr
 image: "/images/team/Eun Kyoung Choe.png"
 keyword: "Accessibility and Inclusive Design, Data Science, Analytics, and Visualization, Health Informatics, Human-Computer Interaction"

@@ -21,19 +21,24 @@
     {{ if $categories }}
     <ul class="mb-2 flex flex-col space-y-1">
       <li class="mr-4 inline-block">
-          {{ $authors := .Params.author }}
-          {{ $highlightAuthor := .Params.highlightauthor }}
-          {{ $splitAuthors := split $authors "," }}
-          {{ range $index, $author := $splitAuthors }}
-            {{ $author = $author | strings.TrimSpace }} <!-- 공백 제거 -->
-            {{ if in $highlightAuthor $author }}
-              <a href="{{ `team/` | relLangURL }}{{ $author | urlize }}/" class="text-black dark:text-white font-light">{{ $author }}</a>
+        {{ $authors := .Params.author }}
+        {{ $highlightAuthors := .Params.highlightauthor }}
+        
+        {{ $splitAuthors := split $authors "," }}
+        {{ $formattedAuthors := slice }}
+        
+        {{ range $splitAuthors }}
+            {{ $trimmedAuthor := replaceRE `\s+` " " (trim . " ") }}  <!-- 앞뒤 공백 제거 -->
+        
+            {{ if in $highlightAuthors $trimmedAuthor }}
+                {{ $formattedAuthors = $formattedAuthors | append (printf `<a href="%s%s/" class="text-black dark:text-white font-light">%s</a>` (relLangURL `team/`) ($trimmedAuthor | urlize) $trimmedAuthor) }}
             {{ else }}
-              <span class="text-gray-500 font-light">{{ $author }}</span>
+                {{ $formattedAuthors = $formattedAuthors | append (printf `<span class="text-gray-500 font-light">%s</span>` $trimmedAuthor) }}
             {{ end }}
-            <!-- 쉼표 추가 (마지막 요소 제외) -->
-            {{ if ne $index (sub (len $splitAuthors) 1) }}, {{ end }}
-          {{ end }}
+        {{ end }}
+        
+        {{ delimit $formattedAuthors ", " | safeHTML }}
+        
         </li>
         <li class="mr-4 inline-block font-light">
           <div class="flex items-center">

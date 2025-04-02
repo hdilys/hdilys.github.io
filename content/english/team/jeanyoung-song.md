@@ -1,7 +1,7 @@
 ---
 title: Jean Young Song
 roles: Assistant Professor
-collaborator: O
+collaborator: 0
 email: jeansong@yonsei.ac.kr
 image: "/images/team/Jean Young Song.png"
 keyword: "HAI"

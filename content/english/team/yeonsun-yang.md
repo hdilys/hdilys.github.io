@@ -1,7 +1,7 @@
 ---
 title: Yeonsun Yang
 roles: Ph.D. Student
-collaborator: O
+collaborator: 1
 email: diddustjs98@dgist.ac.kr
 image: "/images/team/Yeonsun Yang.jpeg"
 keyword: "HAI, Interactive & Personalized Learning"

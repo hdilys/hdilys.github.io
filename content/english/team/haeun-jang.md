@@ -1,7 +1,7 @@
 ---
 title: Jang Ha Eun
 roles: M.S. Student
-collaborator: O
+collaborator: 1
 email: j.haeun@yonsei.ac.kr
 image: "/images/team/Jang Ha Eun.JPG"
 keyword: "HCI, AI, facial emotion recognition, social media data"

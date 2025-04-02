@@ -1,5 +1,5 @@
-<!-- categories -->
-{{/*  {{ if isset site.Taxonomies "categories" }}
+{{/*  <!-- categories -->
+{{ if isset site.Taxonomies "categories" }}
   {{ if not (eq (len site.Taxonomies.categories) 0) }}
     <div class="mb-8">
       <h5 class="mb-6">{{ T "categories" }}</h5>
@@ -12,7 +12,7 @@
                   active
                 {{ end }} flex justify-between"
                 href="{{ .Page.RelPermalink }}">
-                {{ .Page.Title }} <span>( {{ len $items }} )</span>
+                {{ .Page.Title }} ( {{ len $items }} )</span>
               </a>
             </li>
           {{ end }}

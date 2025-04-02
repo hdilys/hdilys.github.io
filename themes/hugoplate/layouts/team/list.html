@@ -39,14 +39,27 @@
       </div>
       <div class="row mt-10 mb-8">
         <h4 class="mb-4">Collaborating Researchers</h4>
-        <!-- Collaborator -->
-        {{ range .RegularPages }}
-          {{ if eq .Params.collaborator "O" }}
-            <div class="md:col-6 lg:col-2 mb-14">
-              {{ partial "components/author-card" . }}
-            </div>
-          {{ end }}
-        {{ end }}
+
+            {{ range .RegularPages }}
+              {{ if eq .Params.collaborator 0 }}
+                <div class="md:col-6 lg:col-2 mb-8">
+                  {{ partial "components/author-card" . }}
+                </div>
+              {{ end }}
+            {{ end }}
+        </div>
+
+        <div class="row mt-10 mb-8">
+  
+              {{ range .RegularPages }}
+                {{ if eq .Params.collaborator 1 }}
+                  <div class="md:col-6 lg:col-2 mb-8">
+                    {{ partial "components/author-card" . }}
+                  </div>
+                {{ end }}
+              {{ end }}
+          </div>
+        </div>
       </div>
     </div>
   </section>

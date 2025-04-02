@@ -215,13 +215,77 @@
             </div>
           {{ end }}
           {{ end }}
-
-          {{/*  <!-- Coming Soon 텍스트 추가 -->
-        <h1 class="text-4xl font-bold mb-8">Coming Soon</h1>  */}}
-        
         </div>
       </div>
     </div>
   </section>
-{{ end }}
 
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-10 lg:col-7 text-center">
+          <!-- 카테고리 목록 -->
+          {{ if isset site.Taxonomies "categories" }}
+            {{ if gt (len site.Taxonomies.categories) 0 }}
+              <div class="mb-6">
+                <h5 class="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100">Research Topics</h5>
+                <div class="space-y-3">
+                  {{ range $name, $items := site.Taxonomies.categories }}
+                    {{ $percentage := mul (len $items) 10 }}
+                    <a href="{{ .Page.RelPermalink }}" class="block group">
+                      <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                        <div class="flex justify-between items-center mb-2">
+                          <span class="text-sm font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary transition-colors">
+                            {{ .Page.Title }}
+                          </span>
+                          <span class="text-xs text-gray-600 dark:text-gray-400">
+                            {{ len $items }}
+                          </span>
+                        </div>
+                        <div class="h-1 bg-gray-100 dark:bg-gray-600 rounded overflow-hidden">
+                          <div class="h-full bg-primary" style="width: {{ $percentage }}%;"></div>
+                        </div>
+                      </div>
+                    </a>
+                  {{ end }}
+                </div>
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-10 lg:col-7">
+          <!-- 카테고리 목록 -->
+          {{ if isset site.Taxonomies "categories" }}
+            {{ if gt (len site.Taxonomies.categories) 0 }}
+              <div class="mb-6">
+                <h5 class="mb-4 text-2xl font-bold text-center text-gray-900 dark:text-gray-100">Research Topics</h5>
+                <div class="space-y-2">
+                  {{ range $name, $items := site.Taxonomies.categories }}
+                    {{ $percentage := mul (len $items) 10 }}
+                    <a href="{{ .Page.RelPermalink }}" class="block">
+                      <div class="relative h-6 rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden group transition-all duration-300 hover:opacity-90">
+                        <div class="absolute inset-0 flex items-center px-3 justify-between text-sm font-medium text-white"
+                            style="width: {{ $percentage }}%; background-color: #002244;">
+                          <span class="truncate">{{ .Page.Title }}</span>
+                          <span class="ml-2 text-xs text-white/80">{{ len $items }}</span>
+                        </div>
+                      </div>
+                    </a>
+                  {{ end }}
+                </div>
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+{{ end }}
