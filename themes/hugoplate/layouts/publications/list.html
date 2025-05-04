@@ -7,25 +7,42 @@
         <section class="section-sm">
           <div class="container">
             <div class="row justify-center">
-              <div class="md:col-10 lg:col-7">
-                <!-- 카테고리 목록 -->
+              <div class="md:col-10 lg:col-8">
                 {{ if isset site.Taxonomies "categories" }}
                   {{ if gt (len site.Taxonomies.categories) 0 }}
                     <div class="mb-6">
                       <h5 class="mb-4 text-2xl font-bold text-center text-gray-900 dark:text-gray-100">Research Topics</h5>
-                      <div class="space-y-2">
+                      <div class="space-y-3">
+        
+                        <!-- ✅ 전체 카운트 합계 계산 -->
+                        {{ $total := 0 }}
                         {{ range $name, $items := site.Taxonomies.categories }}
-                          {{ $percentage := mul (len $items) 10 }}
+                          {{ $total = add $total (len $items) }}
+                        {{ end }}
+        
+                        <!-- ✅ 항목 출력 -->
+                        {{ range $name, $items := site.Taxonomies.categories }}
+                          {{ $count := len $items }}
+                          {{ $percentage := mul (div (float $count) (float $total)) 100 }}
+        
                           <a href="{{ .Page.RelPermalink }}" class="block">
-                            <div class="relative h-6 rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden group transition-all duration-300 hover:opacity-90">
-                              <div class="absolute inset-0 flex items-center px-3 justify-between text-sm font-medium text-white"
-                                  style="width: {{ $percentage }}%; background-color: #002244;">
-                                <span class="truncate">{{ .Page.Title }}</span>
-                                <span class="ml-2 text-xs text-white/80">{{ len $items }}</span>
+                            <div class="flex items-center space-x-4">
+                              <!-- 오른쪽 정렬된 라벨 -->
+                              <span class="w-96 text-sm text-right text-gray-900 dark:text-gray-100 leading-snug">
+                                {{ .Page.Title }}
+                              </span>
+        
+                              <!-- 전체 합 기준 bar -->
+                              <div class="relative flex-1 h-6 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+                                <div class="absolute left-0 top-0 h-full flex items-center justify-end pr-3 text-sm font-semibold text-white"
+                                     style="width: {{ printf "%.1f" $percentage }}%; background-color: #0a1733;">
+                                  {{ $count }}
+                                </div>
                               </div>
                             </div>
                           </a>
                         {{ end }}
+        
                       </div>
                     </div>
                   {{ end }}

@@ -7,21 +7,22 @@
       <div class="row">
         <div class="md:col-12 mx-auto text-center">
           <h2 class="h3 mb-6">Contact Info</h2>
-          <div class="content mb-16 flex justify-center items-center">
+          <div class="content mb-16 flex flex-col md:flex-row justify-center items-center gap-6">
             <!-- 왼쪽 이미지 -->
             {{ $image:= .Params.image }}
             {{ if $image }}
-              <div class="w-2/5">
+              <div class="w-full md:w-2/5">
                 {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "object-cover w-full h-full object-center" "size" "200x200") }}
               </div>
             {{ end }}
-            <!-- 오른쪽 긴 글 -->
-            <div class="w-1/2 pl-16 text-left">
+          
+            <!-- 오른쪽 텍스트 -->
+            <div class="w-full md:w-1/2 md:pl-16 text-center md:text-left">
               <h5 class="container-header text-[#002244] dark:text-[#FFFFFF]">
                 {{ .Params.contactlocationHeader }}
               </h5>
               <p class="mb-8">
-                {{ .Params.contactlocation | markdownify}}
+                {{ .Params.contactlocation | markdownify }}
               </p>
             </div>
           </div>
