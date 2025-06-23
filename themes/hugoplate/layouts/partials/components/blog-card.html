@@ -45,8 +45,16 @@
             <p class="mr-6">
               {{ .Params.journal }}
             </p>
-            <p class="mr-6 font-semibold" style="color: #69BE28;">
-              {{ .Params.honor }}
+            <p class="mr-6 font-semibold flex items-center" style="color: #69BE28;">
+              {{- range .Params.honor }}
+                {{- $honor := lower . }}
+                {{- if in $honor "best paper" }}
+                  <i class="fa-solid fa-trophy mr-1" style="color:gold;"></i>
+                {{- else if in $honor "honorable mention" }}
+                  <i class="fa-solid fa-medal mr-1" style="color:silver;"></i>
+                {{- end }}
+                {{ . }}
+              {{- end }}
             </p>
 
 
