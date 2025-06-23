@@ -9,7 +9,7 @@ author: "Samuel Reinders, Matthew Butler, Ingrid Zukerman, Bongshin Lee, Lizhen 
 highlightauthor: 
     - "Bongshin Lee"
 journal: IEEE TVCG (VIS 2024)
-honor: [Best Paper Honorable Mention Award]
+honor: [Honorable Mention]
 tags: ["2025"]
 year: 2025
 link: "https://doi.org/10.1109/TVCG.2024.3456358"
