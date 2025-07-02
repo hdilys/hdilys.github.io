@@ -1,267 +1,101 @@
 {{ define "main" }}
-  <!-- Banner -->
-  {{ with .Params.banner }}
-    <section class="section-sm">
-      <div class="container items-center">
-        <div class="row items-center justify-center" >
-          <div class="lg:col-7 md:col-9 mb-8 text-center">
-            {{/*  <h1 class="mb-4 text-h3 lg:text-h1">
-              {{ .title | markdownify }}
-            </h1>  */}}
-            <h1 class="mb-4 text-h3 lg:text-h1">
-              <span class="bg-gradient-to-r from-[#002244] to-[#69BE28] text-transparent bg-clip-text">Human-Data</span>
-              <span class="text-[#000000] dark:text-white">Interaction Lab</span>
-            </h1>        
-            <p class="mb-8">
-              {{ .content | markdownify }}
-            </p>
-            {{ with .button }}
-              {{ if .enable }}
-                <a
-                  class="btn btn-primary"
-                  href="{{ .link | absURL }}"
-                  {{ if strings.HasPrefix .link `http` }}
-                    target="_blank" rel="noopener"
-                  {{ end }}>
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
-            {{ end }}
-          </div>
-          {{/*  <div class="col-12">
-            <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-            <dotlottie-player src="https://lottie.host/557171b1-5631-44ba-90f8-204d1452b68e/IfiwlamHBZ.lottie" background="transparent" speed="0.7" style="width: 55%; height: 55%; display: block; margin: 0 auto;" loop autoplay></dotlottie-player>
-          </div>  */}}
+
+<!-- Banner Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-[#002244] mb-4">Human-Data Interaction Lab</h1>
+    <p class="text-lg text-gray-600 mb-8">The Human-Data Interaction Lab is a research group within the Department of Computer Science at Yonsei University, dedicated to exploring the interaction between data and humans.</p>
+  </div>
+</section>
+
+<!-- Recent News Section -->
+{{ with site.GetPage "sections/testimonial" }}
+  {{ if .Params.enable }}
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-[#002244] mb-12">Recent News</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {{ range first 3 (sort .Params.testimonials "day" "desc") }}
+            <div class="rounded-2xl bg-gray-50 shadow p-6 flex flex-col h-full">
+              <div class="h-1 w-12 rounded-full mb-4" style="background-color: {{ .color }};"></div>
+              <div class="mb-4 flex items-center">
+                <div class="font-semibold text-[#002244] mr-2">{{ .name }}</div>
+                <span class="inline-block rounded-full px-2 py-0.5 text-xs font-semibold" style="background-color: {{ .color }}; color: #fff;">{{ .type }}</span>
+              </div>
+              <div class="text-xs text-gray-500 mb-2">{{ .designation }}</div>
+              <div class="text-sm text-gray-700 flex-1 mb-2">{{ .content }}</div>
+              <div class="text-xs text-gray-400 text-right mt-auto">{{ .day }}</div>
+            </div>
+          {{ end }}
+        </div>
+        <div class="text-center mt-10">
+          <a class="btn btn-primary px-6 py-2 rounded-full font-semibold shadow hover:bg-[#69BE28] transition" href="/news">
+            View All News
+            <i class="fa fa-arrow-right pl-2"></i>
+          </a>
         </div>
       </div>
     </section>
   {{ end }}
-  <!-- /Banner -->
+{{ end }}
 
-  <!-- Research Features -->
-
-
-<h3 class="mt-4 text-h3 lg:text-h1 text-center font-bold">
-  <span class="text-[#002244] dark:text-white">Research Topic</span>
-</h3>
-
-{{ range $i, $e := .Params.researchfeature }}
-<section class="section-sm mt-0 section-{{ $i }} bg-white dark:bg-darkmode-body">
+<section class="section pt-14">
   <div class="container">
-    <div class="row items-center justify-between">
-      <!-- Text Section -->
-      <div class="md:col-7 lg:col-6 {{ if not (modBool $i 2) }}md:order-2{{ end }}">
-        <h4 class="mb-2 font-bold text-2xl text-[#002244] dark:text-white">{{ .defaultTitle }}</h4>
-        <p class="mb-6 text-base text-gray-700 dark:text-gray-300">{{ .defaultContent }}</p>
-      </div>
-      <!-- Subtopic Cards Section -->
-      <div class="md:col-5 mb-6 {{ if not (modBool $i 2) }}md:order-1{{ end }}">
-        <div class="grid grid-cols-2 gap-4">
-          {{ range $j, $t := (slice .title1 .title2 .title3 .title4) }}
-            {{ if $t }}
-            <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 text-center shadow-sm hover:shadow-md transition">
-              <span class="block text-base font-medium text-gray-900 dark:text-gray-100">{{ $t }}</span>
+      <div class="row justify-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-[#002244] mb-12">Latest Publications</h2>
+        <div class="lg:col-9 md:col-11 mb-8 text-left">
+            <div class="row mb-4">
+                {{ $pages2025 := where .Site.RegularPages "File.Dir" "publications/2025/" }}
+                {{ $sortedPages2025 := sort $pages2025 "Date" "desc" }}
+
+                {{ range first 3 $sortedPages2025 }}
+                    <div class="md:col-12 mb-8">
+                        {{ partial "components/blog-card" . }}
+                    </div>
+                {{ else }}
+                    <p>No posts available for 2025.</p>
+                {{ end }}
             </div>
-            {{ end }}
-          {{ end }}
+            <!-- 버튼 중앙 정렬 -->
+            <div class="text-center mt-10">
+              <a class="btn btn-primary px-6 py-2 rounded-full font-semibold shadow hover:bg-[#69BE28] transition" href="/publications">
+                View All Publications
+                <i class="fa fa-arrow-right pl-2"></i>
+              </a>
+            </div>
         </div>
       </div>
+  </div>
+</section>
+
+<!-- Research Topics Section -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-[#002244] mb-2 mb-8">Research Topics</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {{ range $i, $e := .Params.researchfeature }}
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-200">
+        <div class="flex flex-col items-center">
+          {{ if .image }}
+            {{ partial "image" (dict "Src" .image "Context" .Page "Alt" .defaultTitle "Class" "object-cover w-full h-full object-center" "size" "150x150") }}
+          {{ end }}
+          <h3 class="mt-4 mb-2 font-bold text-xl text-[#002244] text-center">{{ .defaultTitle }}</h3>
+          <p class="mb-4 text-sm text-gray-700 text-center">{{ .defaultContent }}</p>
+          <div class="flex flex-wrap gap-2 justify-center">
+            {{ range $t := (slice .title1 .title2 .title3 .title4) }}
+              {{ if $t }}
+                <span class="inline-block rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-medium shadow-sm hover:bg-primary hover:text-white transition-colors cursor-pointer" title="{{ $t }}">
+                  {{ $t }}
+                </span>
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
     </div>
   </div>
 </section>
-{{ end }}
-
-  <!-- Features -->
-  {{ range $i, $e:= .Params.features }}
-    <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
-      <div class="container">
-        <div class="row items-center justify-between">
-          <div
-            class="mb:md-0 {{ if not (modBool $i 2) }}
-              md:order-2
-            {{ end }} md:col-5 mb-6">
-            {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
-          </div>
-          <div
-            class="{{ if not (modBool $i 2) }}
-              md:order-1
-            {{ end }} md:col-7 lg:col-6">
-            <h2 class="mb-4">
-              {{ .title | markdownify }}
-            </h2>
-            <p class="mb-8 text-lg">
-              {{ .content | markdownify }}
-            </p>
-            <ul>
-              {{ range $index, $bullet := .bullet }}
-                <li class="relative mb-4 pl-6">
-                  <i class="fa fa-check absolute left-0 top-1.5"></i>
-                  <h6 class="mb-4" style="text-decoration: underline; text-decoration-color: rgb({{ index (slice "0, 192, 232" "106, 13, 173" "255, 166, 43" "255, 165, 0" "128, 0, 128") (mod $index 5) }}); text-underline-offset: 4px;">
-                    {{ $bullet | markdownify }}
-                  </h6>
-                </li>
-              {{ end }}
-              {{ range .bulletpoints }}
-                <li class="relative mb-4 pl-6">
-                  <i class="fa fa-check absolute left-0 top-1.5"></i>
-                  {{ . | markdownify }}
-                </li>
-              {{ end }}
-            </ul>
-            {{ with .button }}
-              {{ if .enable }}
-                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
-            {{ end }}
-          </div>
-        </div>
-      </div>
-    </section>
-  {{ end }}
-  <!-- /Features -->
-
-  <section class="section pt-14">
-    <div class="container">
-        <div class="row justify-center">
-          <h1 class="mb-16 text-h3 lg:text-h1 text-center">
-            Latest Publications
-          </h1>
-          <div class="lg:col-9 md:col-11 mb-8 text-left">
-              <div class="row mb-4">
-                  {{ $pages2025 := where .Site.RegularPages "File.Dir" "publications/2025/" }}
-                  {{ $sortedPages2025 := sort $pages2025 "Date" "desc" }}
-
-                  {{ range first 3 $sortedPages2025 }}
-                      <div class="md:col-12 mb-8">
-                          {{ partial "components/blog-card" . }}
-                      </div>
-                  {{ else }}
-                      <p>No posts available for 2025.</p>
-                  {{ end }}
-              </div>
-              <!-- 버튼 중앙 정렬 -->
-              <div class="text-center">
-                <a class="btn btn-primary"
-                    href="/publications"
-                    style="width: auto; padding: 8px 12px;">
-                    View All Publications
-                    <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              </div>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  
-  <!-- BannerPublication -->
-  {{/*  {{ with .Params.bannerpublication }}
-  <section class="section pt-14">
-    <div class="container">
-      <div class="row justify-center">
-        <div class="lg:col-7 md:col-9 mb-8 text-center">
-          <h1 class="mb-4 text-h3 lg:text-h1">
-            {{ .title | markdownify }}
-          </h1>
-          
-          <p class="mb-8">
-            {{ .content | markdownify }}
-          </p>
-          {{ with .button }}
-            {{ if .enable }}
-              <a
-                class="btn btn-primary"
-                href="{{ .link | absURL }}"
-                {{ if strings.HasPrefix .link `http` }}
-                  target="_blank" rel="noopener"
-                {{ end }}>
-                {{ .label }}
-                <i class="fa fa-arrow-right pl-2"></i>
-              </a>
-            {{ end }}
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </section>
-{{ end }}  */}}
-<!-- /BannerPublication -->
 
 
-
-  <!-- Testimonials -->
-  {{ with site.GetPage "sections/testimonial" }}
-    {{ if .Params.enable }}
-      <section class="section bg-gradient-to-t from-white to-gray-100 dark:from-darkmode-body dark:to-darkmode-body">
-        <div class="container">
-          <div class="row">
-            <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
-              <h2 class="mb-4">
-                {{ .Title | markdownify }}
-              </h2>
-              <p>
-                {{ .Params.description | markdownify }}
-              </p>
-            </div>
-            <div class="col-12">
-              <div class="swiper testimonial-slider">
-                <div class="swiper-wrapper">
-                  {{ range first 4 .Params.testimonials }}
-                    <div class="swiper-slide">
-                      <div
-                        class="bg-white dark:bg-darkmode-theme-light rounded-lg px-7 py-8">
-                        <div class="flex items-center">
-                          <h6 class="h6 font-primary font-semibold">
-                            {{ .day }}
-                          </h6>
-                        </div>
-                        
-                        <blockquote class="mt-8">
-                          {{ .content | markdownify }}
-                        </blockquote>
-                        <div class="flex items-center justify-between mt-6">
-                          <div class="flex items-center space-x-4">
-                            <!-- Tag -->
-                            <div class="flex items-center">
-                              <div class="flex items-center rounded-full px-4 py-1 text-sm text-white" style="background-color: {{ .color }};">                                <p class="font-primary font-light">
-                                  {{ .type }}
-                                </p>
-                              </div>
-                            </div>
-                            <!-- Category Tag -->
-                            <div class="flex items-center bg-gray-100 rounded-full px-4 py-1 text-sm text-gray-600">
-                              {{ partial "image" (dict "Src" .avatar "Size" "14x14" "Class" "rounded-full" "Alt" .name) }}
-                              <p class="ml-2 font-primary font-light">
-                                {{ .name }}
-                              </p>
-                            </div>
-                          </div>
-                          
-                          <!-- Participants -->
-                          <div class="flex items-center space-x-2">
-                            <!-- Participants Avatars -->
-                            <div class="text-dark dark:text-white">
-                              {{ partial "image" (dict "Src" .avatar "Size" "24x24" "Class" "rounded-full" "Alt" .name) }}
-                            </div>
-                          </div>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  {{ end }}
-                </div>
-                <div
-                  class="testimonial-slider-pagination mt-9 flex items-center justify-center text-center"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    {{ end }}
-  {{ end }}
-  <!-- /Testimonials -->
 {{ end }}

@@ -1,102 +1,204 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
 
-  <section class="section">
+  <section class="section-sm">
     <div class="container">
       <div class="row gx-5">
-        <section class="section-sm">
-          <div class="container">
-            <div class="row justify-center">
-              <div class="md:col-10 lg:col-8">
-                {{ if isset site.Taxonomies "categories" }}
-                  {{ if gt (len site.Taxonomies.categories) 0 }}
-                    <div class="mb-6">
-                      <h5 class="mb-4 text-2xl font-bold text-center text-gray-900 dark:text-gray-100">Research Topics</h5>
-                      <div class="space-y-3">
-        
-                        <!-- ✅ 전체 카운트 합계 계산 -->
-                        {{ $total := 0 }}
-                        {{ range $name, $items := site.Taxonomies.categories }}
-                          {{ $total = add $total (len $items) }}
-                        {{ end }}
-        
-                        <!-- ✅ 항목 출력 -->
-                        {{ range $name, $items := site.Taxonomies.categories }}
-                          {{ $count := len $items }}
-                          {{ $percentage := mul (div (float $count) (float $total)) 100 }}
-        
-                          <a href="{{ .Page.RelPermalink }}" class="block">
-                            <div class="flex items-center space-x-4">
-                              <!-- 오른쪽 정렬된 라벨 -->
-                              <span class="w-96 text-sm text-right text-gray-900 dark:text-gray-100 leading-snug">
-                                {{ .Page.Title }}
-                              </span>
-        
-                              <!-- 전체 합 기준 bar -->
-                              <div class="relative flex-1 h-6 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
-                                <div class="absolute left-0 top-0 h-full flex items-center justify-end pr-3 text-sm font-semibold text-white"
-                                     style="width: {{ printf "%.1f" $percentage }}%; background-color: #0a1733;">
-                                  {{ $count }}
-                                </div>
+        <div class="container mb-16">
+          <h2 class="h3 md:text-4xl font-bold text-center mb-8">Research Topics</h2>
+          <div class="row justify-center">
+            <div class="md:col-10 lg:col-8">
+              {{ if isset site.Taxonomies "categories" }}
+                {{ if gt (len site.Taxonomies.categories) 0 }}
+                  <div class="w-full flex justify-center">
+                    <div class="space-y-3 w-full max-w-xl">
+                      <!-- ✅ 전체 카운트 합계 계산 -->
+                      {{ $total := 0 }}
+                      {{ range $name, $items := site.Taxonomies.categories }}
+                        {{ $total = add $total (len $items) }}
+                      {{ end }}
+      
+                      <!-- ✅ 항목 출력 -->
+                      {{ range $name, $items := site.Taxonomies.categories }}
+                        {{ $count := len $items }}
+                        {{ $percentage := mul (div (float $count) (float $total)) 100 }}
+      
+                        <a href="{{ .Page.RelPermalink }}" class="block">
+                          <div class="flex items-center space-x-4">
+                            <!-- 왼쪽 정렬된 라벨 (고정 너비) -->
+                            <span class="w-48 text-sm text-left text-gray-900 dark:text-gray-100 leading-snug">
+                              {{ .Page.Title }}
+                            </span>
+      
+                            <!-- 전체 합 기준 bar -->
+                            <div class="relative flex-1 h-6 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+                              <div class="absolute left-0 top-0 h-full flex items-center justify-end pr-3 text-sm font-semibold text-white"
+                                    style='width: {{ printf "%.1f" $percentage }}%;background-color: #0a1733;'>
+                                {{ $count }}
                               </div>
                             </div>
-                          </a>
-                        {{ end }}
-        
-                      </div>
+                          </div>
+                        </a>
+                      {{ end }}
                     </div>
+                  </div>
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        
+        <!-- blog posts -->
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- sidebar (위/오른쪽 위치 반응형) -->
+          <div class="order-1 lg:order-2 w-full lg:w-36 mb-8 lg:mb-0">
+            <!-- widget -->
+            {{ $widget := site.Params.widgets.sidebar }}
+            {{ partialCached "widgets/widget-wrapper" (dict "Widgets" $widget "Scope" .) }}
+          </div>
+          <!-- main content -->
+          <div class="order-2 lg:order-1 flex-1">
+            <div class="row mb-2">
+              <!-- 2025 -->
+              <div class="grid" style="grid-template-columns: 80px 1fr; align-items: start;">
+                {{ $pages2025 := where .RegularPages "File.Dir" "publications/2025/" }}
+                {{ $sortedPages2025 := sort $pages2025 "Date" "desc" }}
+                {{ $types := slice "Conference" "Journal" "Workshop" "Poster" "Preprint" }}
+                {{ $filteredNoType2025 := where $sortedPages2025 "Params.type" "" }}
+                {{ $yearPrinted2025 := false }}
+                {{ range $type := $types }}
+                  {{ $filtered := where $sortedPages2025 "Params.type" $type }}
+                  {{ if gt (len $filtered) 0 }}
+                    <div class="sticky top-24 self-start">
+                      <div class="text-[#002244] dark:text-white font-bold text-2xl pr-4 {{ if $yearPrinted2025 }}invisible select-none{{ end }}">2025</div>
+                    </div>
+                    <div>
+                      <div class="text-lg font-bold text-[#69BE28] mb-2">{{ $type }}</div>
+                      {{ range $filtered }}
+                        <div class="mb-8">
+                          {{ partial "components/blog-card" . }}
+                        </div>
+                      {{ end }}
+                    </div>
+                    {{ $yearPrinted2025 = true }}
                   {{ end }}
+                {{ end }}
+                {{ if gt (len $filteredNoType2025) 0 }}
+                  <div class="sticky top-24 self-start">
+                    <div class="text-[#002244] dark:text-white font-bold text-2xl pr-4 {{ if $yearPrinted2025 }}invisible select-none{{ end }}">2025</div>
+                  </div>
+                  <div>
+                    <div class="text-lg font-bold text-[#69BE28] mb-2">Other</div>
+                    {{ range $filteredNoType2025 }}
+                      <div class="mb-8">
+                        {{ partial "components/blog-card" . }}
+                      </div>
+                    {{ end }}
+                  </div>
+                  {{ $yearPrinted2025 = true }}
+                {{ end }}
+                {{ if and (not $yearPrinted2025) (eq (len $filteredNoType2025) 0) }}
+                  <div class="sticky top-24 self-start">
+                    <div class="text-[#002244] dark:text-white font-bold text-2xl pr-4">2025</div>
+                  </div>
+                  <div><p>No posts available for 2025.</p></div>
+                {{ end }}
+              </div>
+
+              <div class="grid" style="grid-template-columns: 80px 1fr; align-items: start;">
+                <!-- 2024 -->
+                {{ $pages2024 := where .RegularPages "File.Dir" "publications/2024/" }}
+                {{ $sortedPages2024 := sort $pages2024 "Date" "desc" }}
+                {{ $filteredNoType2024 := where $sortedPages2024 "Params.type" "" }}
+                {{ $yearPrinted2024 := false }}
+                {{ range $type := $types }}
+                  {{ $filtered := where $sortedPages2024 "Params.type" $type }}
+                  {{ if gt (len $filtered) 0 }}
+                    <div class="sticky top-24 self-start">
+                      <div class="text-[#002244] dark:text-white font-bold text-2xl pr-4 {{ if $yearPrinted2024 }}invisible select-none{{ end }}">2024</div>
+                    </div>
+                    <div>
+                      <div class="text-lg font-bold text-[#69BE28] mb-2">{{ $type }}</div>
+                      {{ range $filtered }}
+                        <div class="mb-8">
+                          {{ partial "components/blog-card" . }}
+                        </div>
+                      {{ end }}
+                    </div>
+                    {{ $yearPrinted2024 = true }}
+                  {{ end }}
+                {{ end }}
+                {{ if gt (len $filteredNoType2024) 0 }}
+                  <div class="sticky top-24 self-start">
+                    <div class="text-[#002244] dark:text-white font-bold text-2xl pr-4 {{ if $yearPrinted2024 }}invisible select-none{{ end }}">2024</div>
+                  </div>
+                  <div>
+                    <div class="text-lg font-bold text-[#69BE28] mb-2">Other</div>
+                    {{ range $filteredNoType2024 }}
+                      <div class="mb-8">
+                        {{ partial "components/blog-card" . }}
+                      </div>
+                    {{ end }}
+                  </div>
+                  {{ $yearPrinted2024 = true }}
+                {{ end }}
+                {{ if and (not $yearPrinted2024) (eq (len $filteredNoType2024) 0) }}
+                  <div class="sticky top-24 self-start">
+                    <div class="text-[#002244] dark:text-white font-bold text-2xl pr-4">2024</div>
+                  </div>
+                  <div><p>No posts available for 2024.</p></div>
+                {{ end }}
+              </div>
+
+              <div class="grid" style="grid-template-columns: 80px 1fr; align-items: start;">
+                <!-- 2023 -->
+                {{ $pages2023 := where .RegularPages "File.Dir" "publications/2023/" }}
+                {{ $sortedPages2023 := sort $pages2023 "Date" "desc" }}
+                {{ $filteredNoType2023 := where $sortedPages2023 "Params.type" "" }}
+                {{ $yearPrinted2023 := false }}
+                {{ range $type := $types }}
+                  {{ $filtered := where $sortedPages2023 "Params.type" $type }}
+                  {{ if gt (len $filtered) 0 }}
+                    <div class="sticky top-24 self-start">
+                      <div class="text-[#002244] dark:text-white font-bold text-2xl pr-4 {{ if $yearPrinted2023 }}invisible select-none{{ end }}">2023</div>
+                    </div>
+                    <div>
+                      <div class="text-lg font-bold text-[#69BE28] mb-2">{{ $type }}</div>
+                      {{ range $filtered }}
+                        <div class="mb-8">
+                          {{ partial "components/blog-card" . }}
+                        </div>
+                      {{ end }}
+                    </div>
+                    {{ $yearPrinted2023 = true }}
+                  {{ end }}
+                {{ end }}
+                {{ if gt (len $filteredNoType2023) 0 }}
+                  <div class="sticky top-24 self-start">
+                    <div class="text-[#002244] dark:text-white font-bold text-2xl pr-4 {{ if $yearPrinted2023 }}invisible select-none{{ end }}">2023</div>
+                  </div>
+                  <div>
+                    <div class="text-lg font-bold text-[#69BE28] mb-2">Other</div>
+                    {{ range $filteredNoType2023 }}
+                      <div class="mb-8">
+                        {{ partial "components/blog-card" . }}
+                      </div>
+                    {{ end }}
+                  </div>
+                  {{ $yearPrinted2023 = true }}
+                {{ end }}
+                {{ if and (not $yearPrinted2023) (eq (len $filteredNoType2023) 0) }}
+                  <div class="sticky top-24 self-start">
+                    <div class="text-[#002244] dark:text-white font-bold text-2xl pr-4">2023</div>
+                  </div>
+                  <div><p>No posts available for 2023.</p></div>
                 {{ end }}
               </div>
             </div>
+
+            {{/*  <!-- pagination -->
+            {{ partial "components/pagination.html" . }}  */}}
           </div>
-        </section>
-        
-        <!-- blog posts -->
-        <div class="lg:col-9">
-          <div class="row mb-4">
-
-            <!-- 2025 -->
-            <div class="md:col-12 pl-14">
-                <h4 class="ml-2 mb-6 text-[#002244] dark:text-white">2025</h4>
-            </div>
-            {{ $pages2025 := where .RegularPages "File.Dir" "publications/2025/" }}
-            {{ $sortedPages2025 := sort $pages2025 "Date" "desc" }}
-            {{ range $sortedPages2025 }}
-              <div class="md:col-12 mb-8">
-                {{ partial "components/blog-card" . }}
-              </div>
-            {{ else }}
-              <p>No posts available for 2025.</p>
-            {{ end }}
-          </div>
-
-          <div class="row">
-
-            <!-- 2024 -->
-            <div class="md:col-12 pl-14">
-              <h4 class="ml-2 mb-6 text-[#002244] dark:text-white">2024</h4>
-            </div>
-            {{ $pages2024 := where .RegularPages "File.Dir" "publications/2024/" }}
-            {{ $sortedPages2024 := sort $pages2024 "Date" "desc" }}
-            {{ range $sortedPages2024 }}
-              <div class="md:col-12 mb-8">
-                {{ partial "components/blog-card" . }}
-              </div>
-            {{ else }}
-              <p>No posts available for 2024.</p>
-            {{ end }}
-          </div>
-          
-          {{/*  <!-- pagination -->
-          {{ partial "components/pagination.html" . }}  */}}
-        </div>
-
-        <!-- sidebar -->
-        <div class="lg:col-3">
-          <!-- widget -->
-          {{ $widget := site.Params.widgets.sidebar }}
-          {{ partialCached "widgets/widget-wrapper" (dict "Widgets" $widget "Scope" .) }}
         </div>
       </div>
     </div>

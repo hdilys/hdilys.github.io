@@ -1,82 +1,53 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
 
-
-  <section class="section-sm">
-    <div class="container flex justify-center">
-      <div class="row">
-        <div class="md:col-12 mx-auto text-center">
-          <h2 class="h3 mb-6">Contact Info</h2>
-          <div class="content mb-16 flex flex-col md:flex-row justify-center items-center gap-6">
-            <!-- 왼쪽 이미지 -->
-            {{ $image:= .Params.image }}
-            {{ if $image }}
-              <div class="w-full md:w-2/5">
-                {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "object-cover w-full h-full object-center" "size" "200x200") }}
-              </div>
-            {{ end }}
-          
-            <!-- 오른쪽 텍스트 -->
-            <div class="w-full md:w-1/2 md:pl-16 text-center md:text-left">
-              <h5 class="container-header text-[#002244] dark:text-[#FFFFFF]">
-                {{ .Params.contactlocationHeader }}
-              </h5>
-              <p class="mb-8">
-                {{ .Params.contactlocation | markdownify }}
-              </p>
-            </div>
-          </div>
-          
-          {{/*  <!-- Coming Soon 텍스트 추가 -->
-        <h1 class="text-4xl font-bold mb-8">Coming Soon</h1>
-          */}}
-
-          {{/*  <form action="{{ site.Params.contact_form_action }}" method="POST">
-            <div class="mb-6">
-              <label for="name" class="form-label">
-                Full Name <span class="text-red-500">*</span>
-              </label>
-              <input
-                id="name"
-                name="name"
-                class="form-input"
-                placeholder="John Doe"
-                type="text" />
-            </div>
-            <div class="mb-6">
-              <label for="email" class="form-label">
-                Working Mail <span class="text-red-500">*</span>
-              </label>
-              <input
-                id="email"
-                name="email"
-                class="form-input"
-                placeholder="john.doe@email.com"
-                type="email" />
-            </div>
-            <div class="mb-6">
-              <label for="message" class="form-label">
-                Anything else? <span class="text-red-500">*</span>
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                class="form-input"
-                placeholder="Message goes here..."
-                rows="8"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>  */}}
-        </div>
-
-        <p class="w-1/2 mb-8 text-left">
-          {{ with .Content }}
-                {{ . }}
-            {{ end }}
-        </p>
+  <div class="container mx-auto py-16">
+    <div class="flex flex-col items-center mb-12">
+      <img src="{{ .Params.image }}" alt="Lab Location" class="w-full max-w-xl h-auto object-contain mb-6" />
+      <div class="text-center text-lg text-gray-700 mb-2 font-semibold">{{ .Params.contactlocationHeader }}</div>
+      <div class="text-center text-gray-600 mb-4">
+        {{ .Params.contactlocation | safeHTML }}
+      </div>
+      <div class="text-center mt-6">
+        <a class="btn btn-primary px-6 py-2 rounded-full font-semibold shadow hover:bg-[#69BE28] transition" href="https://docs.google.com/forms/d/e/1FAIpQLSfZhAj4fYXtXGALFRKkv1qNDXgKs8l_VVdonlSQkPDL4a_hsA/viewform?usp=dialog" target="_blank" rel="noopener">
+          Apply
+          <i class="fa fa-arrow-right pl-2"></i>
+        </a>
       </div>
     </div>
-  </section>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- How to Apply -->
+      <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col">
+        <h2 class="text-xl font-bold text-[#002244] mb-4 text-center">How to Apply</h2>
+        <ul class="list-disc list-inside text-gray-700 text-sm mb-2">
+          <li><b>Your resume or CV</b> highlighting your academic background, research experience, and skills.</li>
+          <li><b>A short statement of purpose</b> explaining why you want to join the Human-Data Interaction Lab, why you chose that specific faculty member, and what you hope to achieve.</li>
+          <li>Your portfolio or GitHub link (if available) showcasing relevant projects or code samples.</li>
+        </ul>
+      </div>
+      <!-- Who Should Apply? -->
+      <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col">
+        <h2 class="text-xl font-bold text-[#002244] mb-4 text-center">Who Should Apply?</h2>
+        <ul class="list-disc list-inside text-gray-700 text-sm mb-2">
+          <li>Are curious about human-centered data experiences and inclusive technology design.</li>
+          <li>Have a background or strong interest in data visualization, HCI, behavioral data analysis, or AI-driven insights.</li>
+          <li>Are proactive, creative, and willing to take on challenging problems.</li>
+          <li>Possess solid programming skills in Python, Kotlin, JavaScript, or any other data-related language.</li>
+          <li>Are eager to publish their research in top-tier conferences such as CHI, UIST, VIS, and TVCG.</li>
+        </ul>
+      </div>
+      <!-- Have Question? -->
+      <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col">
+        <h2 class="text-xl font-bold text-[#002244] mb-4 text-center">Have Question?</h2>
+        <div class="text-gray-700 text-sm mb-2">
+          If you have any questions about <b>lab life, research projects, or the application process</b>,<br/><br/>
+          feel free to contact the <b>lab manager</b> (<a href="mailto:hdil.yonsei+manager@yonsei.ac.kr" class="text-primary underline">hdil.yonsei+manager@yonsei.ac.kr</a>)<br/>
+          We're here to help you get the information you need to make the best decision for your research journey!
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- google map -->
   {{ with site.Params.google_map }}
@@ -90,62 +61,5 @@
         data-marker-name="{{ site.Title }}"></div>
     {{ end }}
   {{ end }}
-
-  {{/*  {{ with site.Params.subscription }}
-    {{ if .enable }}
-      <!-- subscription form -->
-      <form
-        action="{{ .mailchimp_form_action | safeURL }}"
-        method="post"
-        id="mc-embedded-subscribe-form"
-        novalidate="novalidate">
-        <div class="input-group w-75 mx-auto mb-3">
-          <input
-            type="email"
-            name="EMAIL"
-            placeholder="Email"
-            class="form-control required email mce_inline_error"
-            id="mce-EMAIL"
-            aria-required="true"
-            autocomplete="off"
-            required />
-          <button
-            class="input-group-text"
-            name="subscribe"
-            id="mc-embedded-subscribe">
-            {{ .button_label }}
-          </button>
-        </div>
-        <input
-          type="hidden"
-          name="EMAILTYPE"
-          id="mce-EMAILTYPE-0"
-          value="html" />
-        <div style="position:absolute;left:-5000px" aria-hidden="true">
-          <input type="text" name="{{ .name }}" tabindex="-1" />
-        </div>
-      </form>
-      <div id="mce-responses" class="clear">
-        <div
-          class="response text-white"
-          id="mce-error-response"
-          style="display:none"></div>
-        <div
-          class="response text-white"
-          id="mce-success-response"
-          style="display:none"></div>
-      </div>
-      <script
-        type="text/javascript"
-        src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-      <!-- /subscription form -->
-    {{ end }}
-  {{ end }}  */}}
-
-  {{/*  {{ if site.Params.google_map.enable }}
-    {{ $gmap:= resources.Get "plugins/maps/google-map.js" }}
-    <script defer src="{{ $gmap.RelPermalink }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key={{ site.Params.google_map.map_api_key }}&libraries=places"></script>
-  {{ end }}  */}}
 
 {{ end }}

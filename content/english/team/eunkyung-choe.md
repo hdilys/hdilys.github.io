@@ -1,6 +1,6 @@
 ---
 title: Eun Kyoung Choe
-roles: Professor at the University of Maryland
+roles: Professor at the University of Maryland, College Park
 collaborator: 0
 email: b.lee@yonsei.ac.kr
 image: "/images/team/Eun Kyoung Choe.png"

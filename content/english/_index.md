@@ -39,10 +39,11 @@ features:
 researchfeature:
   - title1: "Natural Language Interfaces for Data Visualization"
     title2: "Data-Driven Communication and Storytelling"
-    title3: "Interactive Exploration of Text/Image/Video Data"
+    title3: "Interactive Exploration of Text, Image, Video Data"
     title4: "Data Visualization for Responsible AI"
     defaultTitle: "Data Visualization"
     defaultContent: "Data visualization is the practice of transforming raw data into graphical representations that are easy to understand, interpret, and act upon. It bridges the gap between complex datasets and meaningful insights, enabling researchers and stakeholders to make informed decisions."
+    image: "/images/research/DataVisualization.png"
 
   - title1: "Evaluation of Generative AI Models"
     title2: "Human-in-the-loop Workflows for AI Systems"
@@ -50,6 +51,7 @@ researchfeature:
     title4: "AI-Powered Persona Development and Application"
     defaultTitle: "Human-AI Interaction and Collaboration"
     defaultContent: "Investigate how humans and AI collaborate effectively through visualization. Our research explores various aspects of human-AI interaction, ensuring that AI systems are designed with human needs and feedback in mind."
+    image: "/images/research/Human-AIInteractionandCollaboration.png"
 
   - title1: "Accessible Data Visualization"
     title2: "Synergistic Multimodal Interaction"
@@ -57,6 +59,7 @@ researchfeature:
     title4: "Digital Literacy for Marginalized Populations"
     defaultTitle: "Inclusive Data Experiences"
     defaultContent: "Ensure accessibility and inclusivity in data visualization. Our research focuses on designing data experiences that are adaptable to diverse user needs, enabling equitable access to information regardless of ability, device, or background."
+    image: "/images/research/AccessibleDataVisualization.png"
 
 # BannerPublication
 bannerpublication:
