@@ -1,4 +1,4 @@
-<div class="bg-body dark:bg-darkmode-body flex">
+<div class="bg-body dark:bg-darkmode-body">
   {{/*  // blog-card image 유무 설정  */}}
   {{/*  {{ $image:= .Params.image }}
   {{ if $image }}
@@ -6,7 +6,25 @@
       {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mb-6 w-full border rounded") }}
     </div>
   {{ end }}  */}}
-  <div class="pl-12">
+  <div>
+    {{ if .Params.honor }}
+      <div class="flex flex-wrap gap-2 mb-2">
+        {{- range .Params.honor }}
+          {{- $honor := lower . }}
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold
+            {{ if in $honor "best paper" }} bg-yellow-100 text-yellow-800 border border-yellow-300
+            {{ else if in $honor "honorable mention" }} bg-pink-100 text-pink-800 border border-pink-300
+            {{ else }} bg-gray-100 text-gray-800 border border-gray-300 {{ end }}">
+            {{ if in $honor "best paper" }}
+              <i class="fa-solid fa-trophy mr-1" style="color:gold;"></i>
+            {{ else if in $honor "honorable mention" }}
+              <i class="fa-solid fa-medal mr-1" style="color:silver;"></i>
+            {{ end }}
+            {{ . }}
+          </span>
+        {{- end }}
+      </div>
+    {{ end }}
     <h6 class="mb-2">
       {{ with .Params.link }}
           <a href="{{ . }}" target="_blank" rel="noopener">
@@ -20,7 +38,7 @@
     {{ $categories:= .Params.categories }}
     {{ if $categories }}
     <ul class="mb-2 flex flex-col space-y-1">
-      <li class="mr-4 inline-block">
+      <li class="mr-4 inline-block leading-tight" style="line-height:1.2;">
         {{ $authors := .Params.author }}
         {{ $highlightAuthors := .Params.highlightauthor }}
         
@@ -31,9 +49,9 @@
             {{ $trimmedAuthor := replaceRE `\s+` " " (trim . " ") }}  <!-- 앞뒤 공백 제거 -->
         
             {{ if in $highlightAuthors $trimmedAuthor }}
-                {{ $formattedAuthors = $formattedAuthors | append (printf `<a href="%s%s/" class="text-black dark:text-white font-light">%s</a>` (relLangURL `team/`) ($trimmedAuthor | urlize) $trimmedAuthor) }}
+                {{ $formattedAuthors = $formattedAuthors | append (printf `<a href="%s%s/" class="text-black dark:text-white font-light leading-tight">%s</a>` (relLangURL `team/`) ($trimmedAuthor | urlize) $trimmedAuthor) }}
             {{ else }}
-                {{ $formattedAuthors = $formattedAuthors | append (printf `<span class="text-gray-500 font-light">%s</span>` $trimmedAuthor) }}
+                {{ $formattedAuthors = $formattedAuthors | append (printf `<span class="text-gray-500 font-light leading-tight">%s</span>` $trimmedAuthor) }}
             {{ end }}
         {{ end }}
         
@@ -45,7 +63,7 @@
             <p class="mr-6">
               {{ .Params.journal }}
             </p>
-            <p class="mr-6 font-semibold flex items-center" style="color: #69BE28;">
+            {{/*  <p class="mr-6 font-semibold flex items-center" style="color: #DD0525;">
               {{- range .Params.honor }}
                 {{- $honor := lower . }}
                 {{- if in $honor "best paper" }}
@@ -55,7 +73,7 @@
                 {{- end }}
                 {{ . }}
               {{- end }}
-            </p>
+            </p>  */}}
 
 
                         {{/*  카테고리  */}}
