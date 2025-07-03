@@ -39,37 +39,8 @@
   {{ end }}
 {{ end }}
 
-<section class="section pt-14">
-  <div class="container">
-      <div class="row justify-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-[#002244] mb-12">Latest Publications</h2>
-        <div class="lg:col-9 md:col-11 mb-8 text-left">
-            <div class="row mb-4">
-                {{ $pages2025 := where .Site.RegularPages "File.Dir" "publications/2025/" }}
-                {{ $sortedPages2025 := sort $pages2025 "Date" "desc" }}
-
-                {{ range first 3 $sortedPages2025 }}
-                    <div class="md:col-12 mb-8">
-                        {{ partial "components/blog-card" . }}
-                    </div>
-                {{ else }}
-                    <p>No posts available for 2025.</p>
-                {{ end }}
-            </div>
-            <!-- 버튼 중앙 정렬 -->
-            <div class="text-center mt-10">
-              <a class="btn btn-primary px-6 py-2 rounded-full font-semibold shadow hover:bg-[#69BE28] transition" href="/publications">
-                View All Publications
-                <i class="fa fa-arrow-right pl-2"></i>
-              </a>
-            </div>
-        </div>
-      </div>
-  </div>
-</section>
-
 <!-- Research Topics Section -->
-<section class="py-16 bg-gray-50">
+<section class="py-16">
   <div class="container mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold text-center text-[#002244] mb-2 mb-8">Research Topics</h2>
     <div class="grid md:grid-cols-3 gap-8">
@@ -96,6 +67,37 @@
     </div>
   </div>
 </section>
+
+<section class="section pt-14 bg-gray-50">
+  <div class="container">
+      <div class="row justify-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-[#002244] mb-12">Latest Publications</h2>
+        <div class="lg:col-9 md:col-11 mb-8 text-left ">
+            <div class="row mb-4">
+                {{ $pages2025 := where .Site.RegularPages "File.Dir" "publications/2025/" }}
+                {{ $sortedPages2025 := sort $pages2025 "Date" "desc" }}
+
+                {{ range first 3 $sortedPages2025 }}
+                    <div class="md:col-12 mb-8 ">
+                        {{ partial "components/blog-card" . }}
+                    </div>
+                {{ else }}
+                    <p>No posts available for 2025.</p>
+                {{ end }}
+            </div>
+            <!-- 버튼 중앙 정렬 -->
+            <div class="text-center mt-10">
+              <a class="btn btn-primary px-6 py-2 rounded-full font-semibold shadow hover:bg-[#69BE28] transition" href="/publications">
+                View All Publications
+                <i class="fa fa-arrow-right pl-2"></i>
+              </a>
+            </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+
 
 
 {{ end }}
