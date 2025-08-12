@@ -1,80 +1,8 @@
 {{ define "main" }}
-  {{ partial "page-header" . }}
-
   <section class="section">
     <div class="container">
-      <div class="row mb-8">
-        <h4 class="mb-4">Faculties</h4>
-        <!-- Professor -->
-        {{ $pages := slice }}
-        {{ range .RegularPages }}
-          {{ if and (eq .Params.roles "Professor") (not (.Params.collaborator)) }}
-            {{ $title := .Params.title }}
-            {{ $words := split $title " " }}
-            {{ $lastWord := index $words (sub (len $words) 1) }}
-            {{ $pages = $pages | append (dict "Page" . "SortKey" $lastWord) }}
-          {{ end }}
-        {{ end }}
-
-        {{ range sort $pages "SortKey" }}
-          <div class="md:col-6 lg:col-2 mb-14">
-            {{ partial "components/author-card" .Page }}
-          </div>
-        {{ end }}
-      </div>
-      <div class="row mt-10 mb-8">
-        <h4 class="mb-4">M.S. Students</h4>
-        <!-- M.S. Student -->
-        {{ $pages := slice }}
-        {{ range .RegularPages }}
-          {{ if and (eq .Params.roles "M.S. Student") (not (.Params.collaborator)) }}
-            {{ $title := .Params.title }}
-            {{ $words := split $title " " }}
-            {{ $lastWord := index $words (sub (len $words) 1) }}
-            {{ $pages = $pages | append (dict "Page" . "SortKey" $lastWord) }}
-          {{ end }}
-        {{ end }}
-
-        {{ range sort $pages "SortKey" }}
-          <div class="md:col-6 lg:col-2 mb-14">
-            {{ partial "components/author-card" .Page }}
-          </div>
-        {{ end }}
-      </div>
-      <div class="row mt-10 mb-8">
-        <h4 class="mb-4">Interns</h4>
-        <!-- Intern -->
-        {{ range .RegularPages }}
-          {{ if and (eq .Params.roles "Intern") (not (.Params.collaborator)) }}
-            <div class="md:col-6 lg:col-2 mb-14">
-              {{ partial "components/author-card" . }}
-            </div>
-          {{ end }}
-        {{ end }}
-      </div>
-      <div class="row mt-10 mb-8">
-        <h4 class="mb-4">Collaborating Researchers</h4>
-
-            {{ range .RegularPages }}
-              {{ if eq .Params.collaborator 0 }}
-                <div class="md:col-6 lg:col-2 mb-8">
-                  {{ partial "components/author-card" . }}
-                </div>
-              {{ end }}
-            {{ end }}
-        </div>
-
-        <div class="row mt-10 mb-8">
-  
-              {{ range .RegularPages }}
-                {{ if eq .Params.collaborator 1 }}
-                  <div class="md:col-6 lg:col-2 mb-8">
-                    {{ partial "components/author-card" . }}
-                  </div>
-                {{ end }}
-              {{ end }}
-          </div>
-        </div>
+      <div class="content text-center">
+        <h1>Comming soon</h1>
       </div>
     </div>
   </section>
