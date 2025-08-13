@@ -47,19 +47,5 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- google map -->
-  {{ with site.Params.google_map }}
-    {{ if .enable }}
-      <div
-        id="map"
-        style="height: 400px;"
-        data-latitude="{{ .map_latitude }}"
-        data-longitude="{{ .map_longitude }}"
-        data-marker="{{ .map_marker | relURL }}"
-        data-marker-name="{{ site.Title }}"></div>
-    {{ end }}
-  {{ end }}
-
+  </section>
 {{ end }}
