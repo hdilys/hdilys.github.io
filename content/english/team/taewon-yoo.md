@@ -2,7 +2,7 @@
 title: Taewon Yoo
 roles: M.S. Student
 email: twyoo@yonsei.ac.kr
-image: "/images/team/Taewoon Yoo.JPG"
+image: "/images/team/Taewon Yoo.JPG"
 keyword: "Human-AI Interaction, Responsible AI"
 description: this is meta description
 social:

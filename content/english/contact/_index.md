@@ -5,5 +5,5 @@ description: "this is meta description"
 draft: false
 image: "/images/locationinfo.png"
 contactlocationHeader: "Human-Data Interaction Lab"
-contactlocation: "D810 of the 4th Engineering Building <br/> 50 Yonsei-ro, Seodaemun-gu, Seoul, Republic of Korea <br/><br/> Tel: 02-2123-7685 <br/><br/>If you are interested in joining this lab, Please click the button below.<br/>Please check below for detailed application procedures and additional information."
+contactlocation: "D810, 4th Engineering Building <br/> 50 Yonsei-ro, Seodaemun-gu, Seoul, Republic of Korea <br/><br/> Tel: 02-2123-7685 <br/><br/>See below for detailed application procedures and additional information."
 ---
