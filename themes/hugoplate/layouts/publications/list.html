@@ -63,7 +63,7 @@
               <div class="grid" style="grid-template-columns: 80px 1fr; align-items: start;">
                 {{ $pages2025 := where .RegularPages "File.Dir" "publications/2025/" }}
                 {{ $sortedPages2025 := sort $pages2025 "Date" "desc" }}
-                {{ $types := slice "Conference" "Journal" "Workshop" "Poster" "Preprint" }}
+                {{ $types := slice "Conference" "Journal" "Workshop" "Poster" "Poster & Workshop" "Preprint" }}
                 {{ $filteredNoType2025 := where $sortedPages2025 "Params.type" "" }}
                 {{ $yearPrinted2025 := false }}
                 {{ range $type := $types }}
