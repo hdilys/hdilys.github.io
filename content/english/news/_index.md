@@ -1,5 +1,5 @@
 ---
-title: "News"
+title: "Recent News"
 meta_title: "News"
 description: "this is meta description"
 image: "/images/avatar.png"

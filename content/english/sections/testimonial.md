@@ -1,7 +1,7 @@
 ---
 enable: true
 title: "Recent News"
-description: "Check out the latest news and Lab logs from the Human-Data Interaction Lab!"
+description: "Check out the latest news from the Human-Data Interaction Lab!"
 
 # Testimonials
 testimonials:
@@ -11,7 +11,7 @@ testimonials:
     designation: ""
     day: "July, 2024"
     date: "2024-07-01"
-    content: "HDIL opens at Yonsei University!"
+    content: "HDIL opened at Yonsei University!"
 
   - name: "FluidTrack"
     type: "Awards"
@@ -30,22 +30,108 @@ testimonials:
     content: "5 papers have been accepted to CHI 2025!"
 
   - name: "NAACL 2025"
-    type: "Awards"
-    color: "#ffd700"
+    type: "Publication"
+    color: "#0078D7"
     designation: ""
     day: "April, 2025"
     date: "2025-04-01"
-    content: "1 paper has been accepted to NAACL 2025 as Oral!"
+    content: "1 oral paper has been accepted to NAACL 2025!"
 
   - name: "UbiComp 2025"
-    type: "Awards"
-    color: "#ffd700"
+    type: "Publication"
+    color: "#0078D7"
     designation: ""
     day: "Oct, 2025"
     date: "2025-10-01"
     content: "1 paper has been accepted to UbiComp 2025!"
-  
 
+  - name: "New Member"
+    type: "News"
+    color: "#69BE28"
+    designation: ""
+    day: "Mar, 2026"
+    date: "2026-03-01"
+    content: "Minji Jung joined HDIL as an M.S. student. Welcome!"
+
+  - name: "New Member"
+    type: "News"
+    color: "#69BE28"
+    designation: ""
+    day: "Dec, 2025"
+    date: "2025-12-01"
+    content: "Jeongwon Ha joined HDIL as an intern. Welcome!"
+
+  - name: "New Member"
+    type: "News"
+    color: "#69BE28"
+    designation: ""
+    day: "Nov, 2025"
+    date: "2025-11-01"
+    content: "Zekai Shao joined HDIL as a visiting researcher. Welcome!"
+  
+  - name: "New Member"
+    type: "News"
+    color: "#69BE28"
+    designation: ""
+    day: "Jan, 2026"
+    date: "2026-01-12"
+    content: "Yoojin Jeon joined HDIL as an intern. Welcome!"
+
+  - name: "New Member"
+    type: "News"
+    color: "#69BE28"
+    designation: ""
+    day: "Oct, 2025"
+    date: "2025-10-02"
+    content: "Yejin Kim joined HDIL as an intern. Welcome!"
+
+  - name: "New Member"
+    type: "News"
+    color: "#69BE28"
+    designation: ""
+    day: "Sep, 2025"
+    date: "2025-09-02"
+    content: "Sarang Choi joined HDIL as an intern. Welcome!"
+
+  - name: "New Member"
+    type: "News"
+    color: "#69BE28"
+    designation: ""
+    day: "Sep, 2025"
+    date: "2025-09-01"
+    content: "Sebin Hwang joined HDIL as an M.S. student. Welcome!"
+
+  - name: "New Member"
+    type: "News"
+    color: "#69BE28"
+    designation: ""
+    day: "Sep, 2025"
+    date: "2025-09-01"
+    content: "Minjae Lee joined HDIL as an M.S. student. Welcome!"
+
+  - name: "New Member"
+    type: "News"
+    color: "#69BE28"
+    designation: ""
+    day: "Mar, 2025"
+    date: "2025-03-01"
+    content: "Seongjae Bae joined HDIL as an M.S. student. Welcome!"
+  
+  - name: "New Member"
+    type: "News"
+    color: "#69BE28"
+    designation: ""
+    day: "Mar, 2025"
+    date: "2025-03-01"
+    content: "Taewon Yoo joined HDIL as an M.S. student. Welcome!"
+
+  - name: "New Member"
+    type: "News"
+    color: "#69BE28"
+    designation: ""
+    day: "Sep, 2024"
+    date: "2024-09-01"
+    content: "Jeewon Kee joined HDIL as an M.S. student. Welcome!"
 
 # don't create a separate page
 _build:

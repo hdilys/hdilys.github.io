@@ -2,14 +2,14 @@
 title: Dae Hyun Kim
 order: 2
 roles: Professor
-email: dhkim16@cs.stanford.edu
+email: dhkim16@yonsei.ac.kr
 image: "/images/team/Dae Hyun Kim.png"
 keyword: "HCI, HAI, Data Visualization"
 description: this is meta description
 social:
   - name: email
     icon: fa-solid fa-envelope
-    link: mailto:dhkim16@cs.stanford.edu
+    link: mailto:dhkim16@yonsei.ac.kr
   
   - name: home
     icon: fa-solid fa-house

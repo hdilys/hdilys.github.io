@@ -1,8 +1,9 @@
 ---
 title: Eun Kyoung Choe
 roles: Professor at the University of Maryland, College Park
+display_role: Professor at UMD, College Park
 collaborator: 0
-email: b.lee@yonsei.ac.kr
+email: choe@umd.edu
 image: "/images/team/Eun Kyoung Choe.png"
 keyword: "Accessibility and Inclusive Design, Data Science, Analytics, and Visualization, Health Informatics, Human-Computer Interaction"
 description: this is meta description

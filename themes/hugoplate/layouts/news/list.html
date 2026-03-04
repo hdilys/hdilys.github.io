@@ -1,53 +1,78 @@
 {{ define "main" }}
-  {{ partial "page-header" . }}
+{{ partial "page-header" . }}
 
-  {{ with site.GetPage "sections/testimonial" }}
-    {{ if .Params.enable }}
-      <section class="section-sm">
-        <div class="container">
-          <div class="row">
-            <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
-              <h2 class="h3 mb-4">
-                {{ .Title | markdownify }}
-              </h2>
-              <p>
-                {{ .Params.description | markdownify }}
-              </p>
-            </div>
+{{ with site.GetPage "sections/testimonial" }}
+{{ if .Params.enable }}
 
-            <!-- 연도 헤더 -->
-            <div class="w-full mb-8 px-4">
-              <h4 class="mb-4 text-xl font-semibold">2025</h4>
+<section class="section-sm">
+  <div class="container">
 
-              <div class="testimonial-list space-y-6">
-                {{ $sortedTestimonials := sort .Params.testimonials "date" "desc" }}
-                {{ range $sortedTestimonials }}
-                  <div class="testimonial-item p-4 border border-gray-200 dark:border-gray-700 sm:border-none rounded-md">
-                    <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-                      <!-- 날짜 -->
-                      <h4 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2 sm:mb-0">
-                        {{ .day }}
-                      </h4>
-                  
-                      <!-- Tag -->
-                      {{ if eq .type "News" }}
-                        <p class="text-sm font-bold mb-2 sm:mb-0 sm:mr-4" style="color: {{ .color }};">
-                          {{ .type }}
-                        </p>
-                      {{ end }}
-                    </div>
-                  
-                    <!-- 본문 내용 -->
-                    <blockquote class="mt-2 text-sm sm:text-base text-gray-700 dark:text-gray-300">
-                      {{ .content | markdownify }}
-                    </blockquote>
-                  </div>
-                {{ end }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    {{/* Sort by date descending */}}
+    {{ $sorted := sort .Params.testimonials "date" "desc" }}
+
+    {{/* Extract unique years (as strings) */}}
+    {{ $years := slice }}
+    {{ range $sorted }}
+      {{ $year := printf "%d" ((time .date).Year) }}
+      {{ if not (in $years $year) }}
+        {{ $years = $years | append $year }}
+      {{ end }}
     {{ end }}
-  {{ end }}
+
+    {{/* Render by year */}}
+    {{ range $years }}
+      {{ $currentYear := . }}
+
+      <div class="mb-16">
+        <h3 class="text-2xl font-bold text-[#002244] mb-8 border-b pb-2">
+          {{ $currentYear }}
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {{ range $sorted }}
+            {{ if eq (printf "%d" ((time .date).Year)) $currentYear }}
+
+              <div class="rounded-2xl bg-white dark:bg-darkmode-body shadow p-6 flex flex-col h-full">
+                <!-- Top color bar (same as Home) -->
+                <div class="h-1 w-12 rounded-full mb-4" style="background-color: {{ .color }};"></div>
+
+                <!-- Title row (same structure as Home) -->
+                <div class="mb-3 flex items-center justify-between gap-4">
+                  <div class="font-semibold text-[#002244]">
+                    {{ .name }}
+                  </div>
+
+                  <!-- Pill (same as Home) -->
+                  <span class="inline-block rounded-full px-2 py-0.5 text-xs font-semibold whitespace-nowrap"
+                        style="background-color: {{ .color }}; color: #fff;">
+                    {{ .type }}
+                  </span>
+                </div>
+
+                {{ if .designation }}
+                  <div class="text-xs text-gray-500 mb-2">{{ .designation }}</div>
+                {{ end }}
+
+                <div class="text-sm text-gray-700 dark:text-gray-300 flex-1">
+                  {{ .content }}
+                </div>
+
+                <div class="text-xs text-gray-400 text-right mt-4">
+                  {{ .day }}
+                </div>
+              </div>
+
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+
+    {{ end }}
+
+  </div>
+</section>
+
+{{ end }}
+{{ end }}
+
 {{ end }}

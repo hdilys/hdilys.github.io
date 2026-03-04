@@ -3,7 +3,7 @@ title: Bongshin Lee
 order: 3
 roles: Professor
 email: b.lee@yonsei.ac.kr
-image: "/images/team/Bongshin Lee.jpg"
+image: "/images/team/Bongshin Lee.jpeg"
 keyword: "Human-Data Interaction, Human-Computer/AI Interaction, Data Visualization"
 description: this is meta description
 social:

@@ -1,14 +1,9 @@
 {
   "main": [
     {
-      "name": "github",
-      "icon": "fab fa-github",
-      "link": "https://github.com/Human-Data-Interaction-Lab"
-    },
-    {
       "name": "mail",
       "icon": "fa fa-envelope",
-      "link": "mailto:hdil.yonsei@gmail.com"
+      "link": "https://mail.google.com/mail/?view=cm&fs=1&to=manager.hdil.yonsei@gmail.com"
     }
   ]
 }

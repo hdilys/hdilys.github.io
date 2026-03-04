@@ -2,84 +2,68 @@
 {{ partial "page-header" . }}
 
 {{ range $i, $e := .Params.features }}
-<section class="section-sm mt-4 section-{{ $i }} dark:bg-darkmode-body" 
-         data-default-title="{{ .defaultTitle }}" 
-         data-default-content="{{ .defaultContent }}">
+{{ $accent := "#06b6d4" }}
+{{ if eq $i 1 }}{{ $accent = "#7c3aed" }}{{ end }}
+{{ if eq $i 2 }}{{ $accent = "#f59e0b" }}{{ end }}
+
+<section class="py-16 {{ if (modBool $i 2) }}bg-white{{ else }}bg-gray-50{{ end }} dark:bg-darkmode-body"
+  style="--accent: {{ $accent }};" data-default-title="{{ .defaultTitle }}"
+  data-default-content="{{ .defaultContent }}">
+
   <div class="container">
-    <div class="row items-center justify-between">
-      <!-- Text Section -->
-      <div class="md:col-7 lg:col-6 {{ if not (modBool $i 2) }}
-              md:order-2
-            {{ end }}">
-        <h2 id="dynamic-title-{{ $i }}" class="mb-4 title-underline">
-          {{ .defaultTitle }}
-        </h2>
-        <p id="dynamic-content-{{ $i }}" class="mb-8 text-lg">
-          {{ .defaultContent }}
-        </p>
+    <div class="row items-center justify-between gap-y-10">
+      <!-- Text -->
+      <div class="md:col-7 lg:col-6 {{ if not (modBool $i 2) }}md:order-2{{ end }}">
+        <div class="max-w-2xl">
+          <h2 class="mb-5 text-3xl font-semibold leading-tight tracking-tight">
+            <span id="dynamic-title-{{ $i }}" class="research-underline research-swap">
+              {{ .defaultTitle }}
+            </span>
+          </h2>
+
+          <p id="dynamic-content-{{ $i }}"
+            class="research-swap text-lg leading-relaxed text-text dark:text-darkmode-text">
+            {{ .defaultContent }}
+          </p>
+
+          <p class="mt-6 text-sm text-gray-500 dark:text-darkmode-text">Hover a topic to preview details.</p>
+        </div>
       </div>
 
-      <!-- Image Section -->
-      <div class="mb:md-0 md:col-5 mb-6 {{ if not (modBool $i 2) }}
-              md:order-1
-            {{ end }}">
-        <div class="image-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-          <!-- Image 1 -->
-          <div class="feature-image" data-title="{{ .title1 }}" data-content="{{ .content1 }}" 
-              onmouseover="handleMouseOver({{ $i }}, this)" onmouseout="resetContent({{ $i }})">
-
-            <div style="padding: 10px; width: 200px;">
-              <div style="display: flex; flex-direction: column;">
-                <div style="display: flex; flex-direction: row;">
-                  {{ partial "image" (dict "Src" .image1_1 "Size" "32x32" "Class" "rounded-full") }}
-                  {{ partial "image" (dict "Src" .image1_2 "Size" "32x32" "Class" "rounded-full") }}
-                </div>
-                <h6 style="margin-top: 16px;">{{ .title1 }}</h6>
-              </div>
+      <!-- Cards -->
+      <div class="md:col-5 mb-2 {{ if not (modBool $i 2) }}md:order-1{{ end }}">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 research-card-grid p-1" data-index="{{ $i }}">
+          <button type="button" class="research-card" data-title="{{ .title1 }}" data-content="{{ .content1 }}">
+            <div class="flex items-center gap-2">
+              {{ partial "image" (dict "Src" .image1_1 "Size" "32x32" "Class" "rounded-full") }}
+              {{ partial "image" (dict "Src" .image1_2 "Size" "32x32" "Class" "rounded-full") }}
             </div>
-          </div>
-          <!-- Image 2 -->
-          <div class="feature-image" data-title="{{ .title2 }}" data-content="{{ .content2 }}" 
-              onmouseover="handleMouseOver({{ $i }}, this)" onmouseout="resetContent({{ $i }})">
+            <h6 class="text-left text-base font-semibold leading-snug">{{ .title1 }}</h6>
+          </button>
 
-            <div style="padding: 10px; width: 200px;">
-              <div style="display: flex; flex-direction: column;">
-                <div style="display: flex; flex-direction: row;">
-                  {{ partial "image" (dict "Src" .image2_1 "Size" "32x32" "Class" "rounded-full") }}
-                  {{ partial "image" (dict "Src" .image2_2 "Size" "32x32" "Class" "rounded-full") }}
-                </div>
-                <h6 style="margin-top: 16px;">{{ .title2 }}</h6>
-              </div>
+          <button type="button" class="research-card" data-title="{{ .title2 }}" data-content="{{ .content2 }}">
+            <div class="flex items-center gap-2">
+              {{ partial "image" (dict "Src" .image2_1 "Size" "32x32" "Class" "rounded-full") }}
+              {{ partial "image" (dict "Src" .image2_2 "Size" "32x32" "Class" "rounded-full") }}
             </div>
-          </div>
-          <!-- Image 3 -->
-          <div class="feature-image" data-title="{{ .title3 }}" data-content="{{ .content3 }}" 
-              onmouseover="handleMouseOver({{ $i }}, this)" onmouseout="resetContent({{ $i }})">
+            <h6 class="text-left text-base font-semibold leading-snug">{{ .title2 }}</h6>
+          </button>
 
-            <div style="padding: 10px; width: 200px;">
-              <div style="display: flex; flex-direction: column;">
-                <div style="display: flex; flex-direction: row;">
-                  {{ partial "image" (dict "Src" .image3_1 "Size" "32x32" "Class" "rounded-full") }}
-                  {{ partial "image" (dict "Src" .image3_2 "Size" "32x32" "Class" "rounded-full") }}
-                </div>
-                <h6 style="margin-top: 16px;">{{ .title3 }}</h6>
-              </div>
+          <button type="button" class="research-card" data-title="{{ .title3 }}" data-content="{{ .content3 }}">
+            <div class="flex items-center gap-2">
+              {{ partial "image" (dict "Src" .image3_1 "Size" "32x32" "Class" "rounded-full") }}
+              {{ partial "image" (dict "Src" .image3_2 "Size" "32x32" "Class" "rounded-full") }}
             </div>
-          </div>
-          <!-- Image 4 -->
-          <div class="feature-image" data-title="{{ .title4 }}" data-content="{{ .content4 }}" 
-              onmouseover="handleMouseOver({{ $i }}, this)" onmouseout="resetContent({{ $i }})">
+            <h6 class="text-left text-base font-semibold leading-snug">{{ .title3 }}</h6>
+          </button>
 
-            <div style="padding: 10px; width: 200px;">
-              <div style="display: flex; flex-direction: column;">
-                <div style="display: flex; flex-direction: row;">
-                  {{ partial "image" (dict "Src" .image4_1 "Size" "32x32" "Class" "rounded-full") }}
-                  {{ partial "image" (dict "Src" .image4_2 "Size" "32x32" "Class" "rounded-full") }}
-                </div>
-                <h6 style="margin-top: 16px;">{{ .title4 }}</h6>
-              </div>
+          <button type="button" class="research-card" data-title="{{ .title4 }}" data-content="{{ .content4 }}">
+            <div class="flex items-center gap-2">
+              {{ partial "image" (dict "Src" .image4_1 "Size" "32x32" "Class" "rounded-full") }}
+              {{ partial "image" (dict "Src" .image4_2 "Size" "32x32" "Class" "rounded-full") }}
             </div>
-          </div>
+            <h6 class="text-left text-base font-semibold leading-snug">{{ .title4 }}</h6>
+          </button>
         </div>
       </div>
     </div>
@@ -88,204 +72,186 @@
 {{ end }}
 
 <style>
-  /* 각 섹션마다 다른 배경색 */
-  .section-0 { background-color: #ffffff; }
-  .section-1 { background-color: #f3f3f3; }
-  .section-2 { background-color: #ffffff; }
-
-  /* 각 섹션별 이미지 hover 효과 - 트렌디한 네온 글로우 & 스케일 효과 적용 */
-  .feature-image {
-    background: rgba(255, 255, 255, 0.2); /* 반투명 배경 */
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid #AAAAAA;
-    backdrop-filter: blur(10px); /* 블러 효과 */
-    transition: all 0.3s ease-in-out;
-  }
-
-  .section-0 .feature-image:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 10px rgba(0, 34, 68, 0.6)); /* 부드러운 네온 블루 */
-  }
-
-  .section-1 .feature-image:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 10px rgba(0, 34, 68, 0.6)); /* 부드러운 네온 블루 */
-  }
-
-  .section-2 .feature-image:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 10px rgba(0, 34, 68, 0.6)); /* 부드러운 네온 블루 */
-  }
-
-  /* 각 섹션별 defaultTitle 밑줄 색상 설정 */
-  .title-underline {
+  .research-underline {
     display: inline-block;
-    padding-bottom: 4px;
-    position: relative;
+    padding-bottom: 6px;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-size: 100% 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
   }
 
-  .section-0 .title-underline::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: rgba(0, 192, 232, 1);
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  .research-underline.no-underline {
+    background-image: none;
   }
 
-  .section-1 .title-underline::after {
-    content: "";
-    display: block;
+  .research-card {
     width: 100%;
-    height: 3px;
-    background-color: rgba(106, 13, 173, 1);
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    text-align: left;
+    padding: 1.1rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    cursor: pointer;
   }
 
-  .section-2 .title-underline::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: rgba(255, 166, 43, 1);
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  .research-card:hover,
+  .research-card:focus {
+    outline: none;
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--accent) 55%, rgba(0, 0, 0, 0.08));
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
+  }
+
+  .dark .research-card {
+    background: rgba(17, 24, 39, 0.45);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .dark .research-card:hover,
+  .dark .research-card:focus {
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+  }
+
+  .research-swap {
+    display: inline-block;
+    transition: opacity 200ms ease, transform 200ms ease;
+    will-change: opacity, transform;
+  }
+
+  .research-swap.is-fading {
+    opacity: 0;
+    transform: translateY(4px);
   }
 </style>
 
 <script>
-  function handleMouseOver(index, element) {
-    document.getElementById(`dynamic-title-${index}`).textContent = element.getAttribute("data-title");
-    document.getElementById(`dynamic-content-${index}`).textContent = element.getAttribute("data-content");
+  const resetTimers = Object.create(null);
+  const swapTimers = Object.create(null);
+
+  function cancelReset(index) {
+    if (resetTimers[index]) {
+      clearTimeout(resetTimers[index]);
+      resetTimers[index] = null;
+    }
+  }
+
+  function scheduleReset(index) {
+    cancelReset(index);
+    resetTimers[index] = setTimeout(() => {
+      resetContent(index);
+      resetTimers[index] = null;
+    }, 280);
+  }
+
+  function clearSwapTimer(index) {
+    if (swapTimers[index]) {
+      clearTimeout(swapTimers[index]);
+      swapTimers[index] = null;
+    }
+  }
+
+  function swapWithFade(index, titleEl, contentEl, nextTitle, nextContent, { removeUnderline = false } = {}) {
+    if (!titleEl || !contentEl) return;
+
+    // If same content, skip
+    if (titleEl.textContent === nextTitle && contentEl.textContent === nextContent) return;
+
+    clearSwapTimer(index);
+
+    // Underline behavior
+    if (removeUnderline) titleEl.classList.add("no-underline");
+    else titleEl.classList.remove("no-underline");
+
+    // Fade out
+    titleEl.classList.add("is-fading");
+    contentEl.classList.add("is-fading");
+
+    // After fade-out, swap text then fade in
+    swapTimers[index] = setTimeout(() => {
+      titleEl.textContent = nextTitle;
+      contentEl.textContent = nextContent;
+
+      titleEl.classList.remove("is-fading");
+      contentEl.classList.remove("is-fading");
+
+      swapTimers[index] = null;
+    }, 200); // must match CSS duration
+  }
+
+  function handleHover(index, btn) {
+    const titleEl = document.getElementById(`dynamic-title-${index}`);
+    const contentEl = document.getElementById(`dynamic-content-${index}`);
+    if (!titleEl || !contentEl) return;
+
+    const nextTitle = btn.getAttribute("data-title") || "";
+    const nextContent = btn.getAttribute("data-content") || "";
+
+    swapWithFade(index, titleEl, contentEl, nextTitle, nextContent, { removeUnderline: true });
   }
 
   function resetContent(index) {
-    const section = document.querySelector(`.section-${index}`);
-    const defaultTitle = section.getAttribute("data-default-title");
-    const defaultContent = section.getAttribute("data-default-content");
+    const sections = document.querySelectorAll("section[data-default-title]");
+    const section = sections[index];
+    if (!section) return;
 
-    document.getElementById(`dynamic-title-${index}`).textContent = defaultTitle;
-    document.getElementById(`dynamic-content-${index}`).textContent = defaultContent;
+    const titleEl = document.getElementById(`dynamic-title-${index}`);
+    const contentEl = document.getElementById(`dynamic-content-${index}`);
+    if (!titleEl || !contentEl) return;
+
+    const defaultTitle = section.getAttribute("data-default-title") || "";
+    const defaultContent = section.getAttribute("data-default-content") || "";
+
+    swapWithFade(index, titleEl, contentEl, defaultTitle, defaultContent, { removeUnderline: false });
   }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".research-card-grid").forEach((grid) => {
+      const index = parseInt(grid.dataset.index, 10);
+      if (Number.isNaN(index)) return;
+
+      let activeBtn = null;
+
+      grid.addEventListener("pointerenter", () => {
+        cancelReset(index);
+      });
+
+      grid.addEventListener("pointerover", (e) => {
+        const btn = e.target.closest(".research-card");
+        if (!btn || !grid.contains(btn)) return;
+
+        if (btn === activeBtn) return;
+        activeBtn = btn;
+
+        cancelReset(index);
+        handleHover(index, btn);
+      });
+
+      grid.addEventListener("pointerleave", () => {
+        activeBtn = null;
+        scheduleReset(index);
+      });
+
+      grid.addEventListener("focusin", (e) => {
+        const btn = e.target.closest(".research-card");
+        if (!btn) return;
+
+        activeBtn = btn;
+        cancelReset(index);
+        handleHover(index, btn);
+      });
+
+      grid.addEventListener("focusout", () => {
+        scheduleReset(index);
+      });
+
+      grid.querySelectorAll(".research-card").forEach((btn) => {
+        btn.addEventListener("click", () => btn.blur());
+      });
+    });
+  });
 </script>
 
-
-
-  <section class="section-sm">
-    <div class="container">
-      <div class="row justify-center">
-        <div class="md:col-10 lg:col-7 text-center">
-          {{/*  {{ partial "image" (dict "Src" .Params.image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6" "Size" "200x200") }}  */}}
-
-            <!-- categories -->
-            {{ if isset site.Taxonomies "categories" }}
-            {{ if not (eq (len site.Taxonomies.categories) 0) }}
-            <div class="mb-8">
-              <h5 class="mb-6">{{ "Research Topics" }}</h5>
-              <div class="rounded p-8">
-                <ul class="space-y-4">
-                  {{ range $name, $items := site.Taxonomies.categories }}
-                    <li>
-                      <a
-                        class="hover:text-primary dark:hover:text-darkmode-primary {{ if (and (eq $.Page.Kind `term`) (eq $.Page.Type `categories`) (eq $.Page.Title .Page.Title)) }}
-                          active
-                        {{ end }} flex justify-between"
-                        href="{{ .Page.RelPermalink }}">
-                        {{ .Page.Title }}
-                      </a>
-
-                      <div class="bars-container flex items-center justify-between">
-                        {{ $items := $items }}
-                        {{ $percentage := mul (len $items) 10 }} <!-- 예를 들어, 각 항목당 10%로 계산 -->
-                          <div class="bar bg-gray-100 rounded" style="width: 95%; height: 10px; position: relative;">
-                          <div class="bar rounded" style="width: {{ $percentage }}%; background-color: #002244; height: 100%; position: absolute; top: 0; left: 0;"></div>
-                        </div>
-                        <span class="text-sm text-gray-600">{{ len $items }}</span>
-                      </div>
-                    </li>
-                  {{ end }}
-                </ul>
-              </div>
-            </div>
-          {{ end }}
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="container">
-      <div class="row justify-center">
-        <div class="md:col-10 lg:col-7 text-center">
-          <!-- 카테고리 목록 -->
-          {{ if isset site.Taxonomies "categories" }}
-            {{ if gt (len site.Taxonomies.categories) 0 }}
-              <div class="mb-6">
-                <h5 class="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100">Research Topics</h5>
-                <div class="space-y-3">
-                  {{ range $name, $items := site.Taxonomies.categories }}
-                    {{ $percentage := mul (len $items) 10 }}
-                    <a href="{{ .Page.RelPermalink }}" class="block group">
-                      <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-                        <div class="flex justify-between items-center mb-2">
-                          <span class="text-sm font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary transition-colors">
-                            {{ .Page.Title }}
-                          </span>
-                          <span class="text-xs text-gray-600 dark:text-gray-400">
-                            {{ len $items }}
-                          </span>
-                        </div>
-                        <div class="h-1 bg-gray-100 dark:bg-gray-600 rounded overflow-hidden">
-                          <div class="h-full bg-primary" style="width: {{ $percentage }}%;"></div>
-                        </div>
-                      </div>
-                    </a>
-                  {{ end }}
-                </div>
-              </div>
-            {{ end }}
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section class="section-sm">
-    <div class="container">
-      <div class="row justify-center">
-        <div class="md:col-10 lg:col-7">
-          <!-- 카테고리 목록 -->
-          {{ if isset site.Taxonomies "categories" }}
-            {{ if gt (len site.Taxonomies.categories) 0 }}
-              <div class="mb-6">
-                <h5 class="mb-4 text-2xl font-bold text-center text-gray-900 dark:text-gray-100">Research Topics</h5>
-                <div class="space-y-2">
-                  {{ range $name, $items := site.Taxonomies.categories }}
-                    {{ $percentage := mul (len $items) 10 }}
-                    <a href="{{ .Page.RelPermalink }}" class="block">
-                      <div class="relative h-6 rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden group transition-all duration-300 hover:opacity-90">
-                        <div class="absolute inset-0 flex items-center px-3 justify-between text-sm font-medium text-white"
-                            style="width: {{ $percentage }}%; background-color: #002244;">
-                          <span class="truncate">{{ .Page.Title }}</span>
-                          <span class="ml-2 text-xs text-white/80">{{ len $items }}</span>
-                        </div>
-                      </div>
-                    </a>
-                  {{ end }}
-                </div>
-              </div>
-            {{ end }}
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </section>
-  
 {{ end }}

@@ -2,14 +2,14 @@
 title: Minsuk Kahng
 order: 1
 roles: Professor
-email: kahng@google.com
+email: minsuk@yonsei.ac.kr
 image: "/images/team/Minsuk Kahng.png"
 keyword: "Visual Analytics, Data Visualization, Responsible AI, Explainable AI, Human-Computer Interaction"
 description: this is meta description
 social:
   - name: email
     icon: fa-solid fa-envelope
-    link: mailto:kahng@google.com
+    link: mailto:minsuk@yonsei.ac.kr
 
   - name: home
     icon: fa-solid fa-house
