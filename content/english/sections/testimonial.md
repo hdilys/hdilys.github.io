@@ -59,7 +59,7 @@ testimonials:
     designation: ""
     day: "Dec, 2025"
     date: "2025-12-01"
-    content: "Jeongwon Ha joined HDIL as an intern. Welcome!"
+    content: "Jeong Won Ha joined HDIL as an intern. Welcome!"
 
   - name: "New Member"
     type: "News"

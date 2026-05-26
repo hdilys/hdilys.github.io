@@ -1,5 +1,5 @@
 ---
-title: Jeongwon Ha
+title: Jeong Won Ha
 roles: Intern
 email: jha@yonsei.ac.kr
 image: "/images/team/Jeongwon Ha.jpg"
