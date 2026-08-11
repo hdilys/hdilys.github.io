@@ -1,6 +1,7 @@
 ---
 title: Zekai Shao
-roles: Visiting Researcher
+roles: Alumni
+display_role: "Visiting Researcher"
 email: gemini25szk@gmail.com
 image: "/images/team/Zekai Shao.jpg"
 keyword: "Data Visualization, Human-AI Interaction"

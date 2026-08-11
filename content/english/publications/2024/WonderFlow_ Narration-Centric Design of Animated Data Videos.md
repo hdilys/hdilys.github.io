@@ -8,10 +8,10 @@ categories: ["Data Visualization"]
 author: "Yun Wang, Leixian Shen, Zhengxin You, Xinhuan Shu, Bongshin Lee, John Thompson, Haidong Zhang, Dongmei Zhang"
 highlightauthor: 
     - "Bongshin Lee"
-journal: IEEE Transactions on Visualization and Computer Graphics, in press
+journal: IEEE Transactions on Visualization and Computer Graphics
 tags: ["2024"]
-type: "Preprint"
-link: "https://doi.org/10.48550/arXiv.2308.04040"
+type: "Journal"
+link: "https://ieeexplore.ieee.org/document/10552427"
 draft: false    
 ---
 

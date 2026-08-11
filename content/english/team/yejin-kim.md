@@ -1,6 +1,7 @@
 ---
 title: Yejin Kim
-roles: Intern
+roles: Alumni
+display_role: "Intern"
 email: gina261@gmail.com
 image: "/images/team/Yejin Kim.JPG"
 keyword: "HAI, Responsible AI, LLM"

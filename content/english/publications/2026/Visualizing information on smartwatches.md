@@ -1,5 +1,5 @@
 ---
-title: "Visualizing information on smartwatch faces: A review and design space"
+title: "Visualizing Information on Smartwatch Faces: A Review and Design Space"
 meta_title: ""
 description: "this is meta description"
 date: 2026-01-01T05:00:00Z

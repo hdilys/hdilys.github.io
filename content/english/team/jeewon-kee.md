@@ -1,6 +1,7 @@
 ---
 title: Jee Won Kee
-roles: M.S. Student
+roles: Alumni
+display_role: "M.S. Student"
 email: jeew.kee@yonsei.ac.kr
 image: "/images/team/Jee Won Kee.png"
 keyword: "Human-Centered LLM"

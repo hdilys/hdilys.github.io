@@ -1,6 +1,7 @@
 ---
 title: Sarang Choi
-roles: Intern
+roles: Alumni
+display_role: "Intern"
 email: sarangchoi@yonsei.ac.kr
 image: "/images/team/Sarang Choi.png"
 keyword: "Human-Data Interaction, Responsible AI"
