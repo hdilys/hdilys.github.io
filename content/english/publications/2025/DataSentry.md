@@ -1,7 +1,7 @@
 ---
 title: "DataSentry: Building Missing Data Management System for In-the-Wild Mobile Sensor Data Collection through Multi-Year Iterative Design Approach"
 meta_title: ""
-date: 2025-04-25T05:00:00Z
+date: 2025-04-26T00:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Data Visualization"]
 author: "Yugyeong Jung, Hei Yiu Law, Hadong Lee, Junmo Lee, Bongshin Lee, Uichin Lee"

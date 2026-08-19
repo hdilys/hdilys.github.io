@@ -2,7 +2,7 @@
 title: "Automatic Histograms: Leveraging Language Models for Text Dataset Exploration"
 meta_title: ""
 description: ""
-date: 2024-05-01T00:00:00Z
+date: 2024-05-11T00:00:00Z
 image: ""
 categories: ["Data Visualization", "Human-AI Interaction and Collaboration"]
 author: "Emily Reif, Crystal Qian, James Wexler, Minsuk Kahng"

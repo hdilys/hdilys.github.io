@@ -2,9 +2,9 @@
 title: "Opportunistic Nudges for Task Migration Between Personal Devices"
 meta_title: ""
 description: "this is meta description"
-date: 2024-05-02T05:00:00Z
+date: 2024-05-11T00:00:00Z
 image: "/images/image-placeholder.png"
-categories: ["Data Visualization"]
+categories: ["Human-AI Interaction and Collaboration"]
 author: "Nikhita Joshi, Richard Li, Jiannan Li, Leonardo Pavanatto, Michel Pahud, Jatin Sharma, Bongshin Lee, Hugo Romat, William Buxton, Nicolai Marquardt, Ken Hinckley, Nathalie Henry Riche"
 highlightauthor: 
     - "Bongshin Lee"

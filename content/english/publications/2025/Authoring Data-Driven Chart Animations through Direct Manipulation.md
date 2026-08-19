@@ -8,7 +8,7 @@ categories: ["Data Visualization"]
 author: "Yuancheng Shen, Yue Zhao, Yunhai Wang, Tong Ge, Haoyan Shi, Bongshin Lee"
 highlightauthor: 
     - "Bongshin Lee"
-journal: IEEE Transaction on Visualization and Computer Graphics 
+journal: "IEEE Transactions on Visualization and Computer Graphics (VIS 2026)"
 tags: ["2025"]
 type: "Journal"
 link: "https://doi.org/10.1109/TVCG.2024.3491504"

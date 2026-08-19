@@ -2,7 +2,7 @@
 title: "COMPASS: A Framework for Evaluating Organization-Specific Policy Alignment in LLMs"
 meta_title: ""
 description: ""
-date: 2026-01-05T00:00:00Z
+date: 2026-01-01T00:00:00Z
 image: ""
 categories: ["Human-AI Interaction and Collaboration"]
 author: "Dasol Choi, DongGeon Lee, Brigitta Jesica Kartono, Helena Berndt, Taeyoun Kwon, Joonwon Jang, Haon Park, Hwanjo Yu, Minsuk Kahng"

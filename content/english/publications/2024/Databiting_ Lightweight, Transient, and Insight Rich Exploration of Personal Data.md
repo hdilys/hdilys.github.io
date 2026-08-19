@@ -9,7 +9,7 @@ author: "Bradley Rey, Bongshin Lee, Eun Kyoung Choe, Pourang Irani"
 highlightauthor: 
     - "Bongshin Lee"
     - "Eun Kyoung Choe"
-journal: IEEE Computer Graphics and Applications 
+journal: IEEE Computer Graphics and Applications (CG&A) 
 tags: ["2024"]
 type: "Journal"
 link: "https://doi.org/10.1109/MCG.2024.3353888"

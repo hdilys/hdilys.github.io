@@ -8,7 +8,7 @@ categories: ["Inclusive Data Experiences"]
 author: "Kim Marriott, Matthew Butler, Leona Holloway, William Jolley, Bongshin Lee, Bruce Maguire, Danielle Albers Szafr"
 highlightauthor: 
     - "Bongshin Lee"
-journal: IEEE Transaction on Visualization and Computer Graphics 
+journal: "IEEE Transactions on Visualization and Computer Graphics (VIS 2026)"
 tags: ["2025"]
 type: "Journal"
 link: "https://ieeexplore.ieee.org/abstract/document/11278569"

@@ -60,6 +60,60 @@
         <!-- main content -->
         <div class="order-2 lg:order-1 flex-1">
           <div class="row mb-2">
+            <!-- 2027 -->
+            <div class="grid" style="grid-template-columns: 80px 1fr; align-items: start;">
+              {{ $pages2027 := where .RegularPages "File.Dir" "publications/2027/" }}
+              {{ $sortedPages2027 := sort $pages2027 "Date" "desc" }}
+              {{ $types := slice "Conference" "Journal" "Workshop" "Poster" "Poster & Workshop" "Preprint" }}
+              {{ $filteredNoType2027 := where $sortedPages2027 "Params.type" "" }}
+              {{ $yearPrinted2027 := false }}
+
+              {{ range $type := $types }}
+              {{ $filtered := where $sortedPages2027 "Params.type" $type }}
+              {{ if gt (len $filtered) 0 }}
+              <div class="sticky top-24 self-start">
+                <div
+                  class="text-[#002244] dark:text-white font-bold text-2xl pr-4 {{ if $yearPrinted2027 }}invisible select-none{{ end }}">
+                  2027</div>
+              </div>
+              <div class="mb-6">
+                <div class="text-xl font-bold text-[#3074FF] mb-6">{{ $type }}</div>
+                {{ range $filtered }}
+                <div class="mb-6">
+                  {{ partial "components/blog-card" . }}
+                </div>
+                {{ end }}
+              </div>
+              {{ $yearPrinted2027 = true }}
+              {{ end }}
+              {{ end }}
+
+              {{ if gt (len $filteredNoType2027) 0 }}
+              <div class="sticky top-24 self-start">
+                <div
+                  class="text-[#002244] dark:text-white font-bold text-2xl pr-4 {{ if $yearPrinted2027 }}invisible select-none{{ end }}">
+                  2027</div>
+              </div>
+              <div>
+                <div class="text-lg font-bold text-[#3074FF] mb-2">Other</div>
+                {{ range $filteredNoType2027 }}
+                <div class="mb-8">
+                  {{ partial "components/blog-card" . }}
+                </div>
+                {{ end }}
+              </div>
+              {{ $yearPrinted2027 = true }}
+              {{ end }}
+
+              {{ if and (not $yearPrinted2027) (eq (len $filteredNoType2027) 0) }}
+              <div class="sticky top-24 self-start">
+                <div class="text-[#002244] dark:text-white font-bold text-2xl pr-4">2027</div>
+              </div>
+              <div>
+                <p>No posts available for 2027.</p>
+              </div>
+              {{ end }}
+            </div>
             <!-- 2026 -->
             <div class="grid" style="grid-template-columns: 80px 1fr; align-items: start;">
               {{ $pages2026 := where .RegularPages "File.Dir" "publications/2026/" }}
@@ -217,6 +271,7 @@
               {{ end }}
             </div>
 
+            {{/* 2023 section hidden - does not cover all publications
             <div class="grid" style="grid-template-columns: 80px 1fr; align-items: start;">
               <!-- 2023 -->
               {{ $pages2023 := where .RegularPages "File.Dir" "publications/2023/" }}
@@ -267,6 +322,7 @@
               </div>
               {{ end }}
             </div>
+            */}}
           </div>
 
           {{/* <!-- pagination -->

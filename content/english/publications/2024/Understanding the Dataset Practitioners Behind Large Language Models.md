@@ -2,7 +2,7 @@
 title: "Understanding the Dataset Practitioners Behind Large Language Models"
 meta_title: ""
 description: ""
-date: 2024-05-01T00:00:00Z
+date: 2024-05-11T00:00:00Z
 image: ""
 categories: ["Human-AI Interaction and Collaboration"]
 author: "Crystal Qian, Emily Reif, Minsuk Kahng"

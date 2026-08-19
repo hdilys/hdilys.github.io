@@ -1,7 +1,7 @@
 ---
 title: "Unpacking Visual Metaphors in Infographics: A Design Space"
 meta_title: ""
-date: 2026-04-30T05:00:00Z
+date: 2026-04-13T00:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Data Visualization"]
 author: "Yukai Guo, Lanxi Xiao, Xinhuan Shu, Qiong Wu, Bongshin Lee, Shixia Liu"
@@ -11,7 +11,7 @@ journal: ACM CHI Conference on Human Factors in Computing Systems (CHI 2026)
 honor: [Honorable Mention Award]
 tags: ["2026"]
 type: "Conference"
-link: ""
+link: "https://dl.acm.org/doi/10.1145/3772318.3790840"
 draft: false
 ---
  

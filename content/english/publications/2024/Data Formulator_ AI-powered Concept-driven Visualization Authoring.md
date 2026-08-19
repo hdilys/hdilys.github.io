@@ -8,10 +8,10 @@ categories: ["Data Visualization", "Human-AI Interaction and Collaboration"]
 author: "Chenglong Wang, John R. Thompson, Bongshin Lee"
 highlightauthor: 
     - "Bongshin Lee"
-journal: IEEE Transactions on Visualization and Computer Graphics (VIS 2023)
+journal: "IEEE Transactions on Visualization and Computer Graphics (VIS 2024)"
 honor: [Honorable Mention Award]
 tags: ["2024"]
-type: "Conference"
+type: "Journal"
 link: "https://doi.org/10.1109/TVCG.2023.3326585"
 draft: false
 ---

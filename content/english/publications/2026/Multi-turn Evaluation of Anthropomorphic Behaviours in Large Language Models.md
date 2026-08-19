@@ -2,7 +2,7 @@
 title: "Multi-turn Evaluation of Anthropomorphic Behaviours in Large Language Models"
 meta_title: ""
 description: ""
-date: 2026-02-02T00:00:00Z
+date: 2026-04-23T00:00:00Z
 image: ""
 categories: ["Human-AI Interaction and Collaboration"]
 author: "Lujain Ibrahim, Canfer Akbulut, Rasmi Elasmar, Charvi Rastogi, Minsuk Kahng, Meredith Ringel Morris, Kevin R McKee, Verena Rieser, Murray Shanahan, Laura Weidinger"

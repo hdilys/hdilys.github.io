@@ -1,7 +1,7 @@
 ---
 title: "Data Formulator 2: Iterative Creation of Data Visualizations, with AI Transforming Data Along the Way"
 meta_title: ""
-date: 2025-04-25T05:00:00Z
+date: 2025-04-26T00:00:00Z
 image: ""
 categories: ["Data Visualization"]
 author: "Chenglong Wang, Bongshin Lee, Steven M. Drucker, Dan Marshall, Jianfeng Gao"

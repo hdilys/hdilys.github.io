@@ -4,7 +4,7 @@ meta_title: ""
 description: "this is meta description"
 date: 2024-05-15T05:00:00Z
 image: "/images/image-placeholder.png"
-categories: ["Data Visualization"] 
+categories: ["Inclusive Data Experiences"]
 author: "Jarrett G.W. Lee, Bongshin Lee, Soyoung Choi, JooYoung Seo, Eun Kyoung Choe"
 highlightauthor: 
     - "Bongshin Lee"

@@ -11,7 +11,7 @@ highlightauthor:
 journal: "arXiv"
 honor: []
 tags: ["2025"]
-type: "Conference"
-link: "https://arxiv.org/pdf/2505.14667"
+type: "Preprint"
+link: "https://arxiv.org/abs/2505.14667"
 draft: false
 ---

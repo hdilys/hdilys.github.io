@@ -1,7 +1,7 @@
 ---
 title: "Transformer Explainer: Learning LLM Transformers with Interactive Visual Explanation and Experimentation"
 meta_title: ""
-date: 2026-04-30T05:00:00Z
+date: 2026-04-13T00:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Human-AI Interaction and Collaboration"]
 author: "Aeree Cho, Grace C. Kim, Alexander Karpekov, Seongmin Lee, Alec Helbling, Benjamin Hoover, Zijie J. Wang, Minsuk Kahng, Duen Horng Chau"
@@ -11,7 +11,7 @@ journal: ACM CHI Conference on Human Factors in Computing Systems (CHI 2026)
 honor: []
 tags: ["2026"]
 type: "Conference"
-link: ""
+link: "https://dl.acm.org/doi/10.1145/3772318.3791725"
 draft: false
 ---
  

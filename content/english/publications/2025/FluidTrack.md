@@ -1,7 +1,7 @@
 ---
 title: "FluidTrack: Investigating Child-Parent Collaborative Tracking for Pediatric Voiding Dysfunction Management"
 meta_title: ""
-date: 2025-04-25T05:00:00Z
+date: 2025-04-26T00:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Inclusive Data Experiences"]
 author: "Junhyung Moon, Sukhyun Lee, Youngchan Kim, Juhee Go, Han Mo Ku, Yeohyun Jung, Seonyeong Hwang, Bongshin Lee, Yong Seung Lee, Hyun-Kyung Lee, Kyoungwoo Lee, Eun Kyoung Choe "

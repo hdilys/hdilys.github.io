@@ -2,13 +2,13 @@
 title: "PlanTogether: Facilitating AI Application Planning Using Information Graphs and Large Language Models"
 meta_title: ""
 description: ""
-date: 2025-04-25T05:00:00Z
+date: 2025-04-26T00:00:00Z
 image: ""
 categories: ["Data Visualization"]
 author: "Dae Hyun Kim, Daeheon Jeong, Shakhnozakhon Yadgarova, Hyungyu Shin, Jinho Son, Hariharan Subramonyam, Juho Kim"
 highlightauthor: 
     - "Dae Hyun Kim"
-journal: "CHI '25: Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems"
+journal: "ACM CHI Conference on Human Factors in Computing Systems (CHI 2025)"
 tags: ["2025"]
 type: "Conference"
 link: "https://doi.org/10.1145/3706598.3714044"

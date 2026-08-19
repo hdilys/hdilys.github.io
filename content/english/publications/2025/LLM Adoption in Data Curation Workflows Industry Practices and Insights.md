@@ -2,7 +2,7 @@
 title: "LLM Adoption in Data Curation Workflows: Industry Practices and Insights"
 meta_title: ""
 description: ""
-date: 2025-04-01T00:00:00Z
+date: 2025-04-26T00:00:00Z
 image: ""
 categories: ["Human-AI Interaction and Collaboration"]
 author: "Crystal Qian, Michael Xieyang Liu, Emily Reif, Grady Simon, Nada Hussein, Nathan Clement, James Wexler, Carrie J. Cai, Michael Terry, Minsuk Kahng"

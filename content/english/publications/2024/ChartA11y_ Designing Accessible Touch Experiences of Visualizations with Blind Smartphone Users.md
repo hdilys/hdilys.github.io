@@ -2,7 +2,7 @@
 title: "ChartA11y: Designing Accessible Touch Experiences of Visualizations with Blind Smartphone Users"
 meta_title: ""
 description: "this is meta description"
-date: 2024-10-27T05:00:00Z
+date: 2024-10-28T00:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Data Visualization", "Inclusive Data Experiences"]
 author: "Zhuohao Zhang, John R. Thompson, Aditi Shah, Manish Agrawal, Alper Sarikaya, Jacob O. Wobbrock, Ed Cutrell, Bongshin Lee"

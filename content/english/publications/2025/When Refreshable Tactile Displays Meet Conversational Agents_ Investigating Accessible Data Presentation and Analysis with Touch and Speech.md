@@ -8,10 +8,10 @@ categories: ["Data Visualization", "Inclusive Data Experiences"]
 author: "Samuel Reinders, Matthew Butler, Ingrid Zukerman, Bongshin Lee, Lizhen Qu, Kim Marriott"
 highlightauthor: 
     - "Bongshin Lee"
-journal: IEEE Transactions on Visualization and Computer Graphics (VIS 2024)
+journal: IEEE Transactions on Visualization and Computer Graphics (VIS 2025)
 honor: [Honorable Mention Award]
 tags: ["2025"]
-type: "Conference"
+type: "Journal"
 link: "https://doi.org/10.1109/TVCG.2024.3456358"
 draft: false
 ---

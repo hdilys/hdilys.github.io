@@ -2,7 +2,7 @@
 title: "LLM Comparator: Visual Analytics for Side-by-Side Evaluation of Large Language Models"
 meta_title: ""
 description: ""
-date: 2024-05-01T00:00:00Z
+date: 2024-05-11T00:00:00Z
 image: ""
 categories: ["Data Visualization", "Human-AI Interaction and Collaboration"]
 author: "Minsuk Kahng, Ian Tenney, Mahima Pushkarna, Michael Xieyang Liu, James Wexler, Emily Reif, Krystal Kallarackal, Minsuk Chang, Michael Terry, Lucas Dixon"

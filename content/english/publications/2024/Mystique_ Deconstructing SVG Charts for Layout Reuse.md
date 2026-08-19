@@ -2,15 +2,15 @@
 title: "Mystique: Deconstructing SVG Charts for Layout Reuse"
 meta_title: ""
 description: "this is meta description"
-date: 2023-10-26T05:00:00Z
+date: 2024-01-01T00:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Data Visualization"] 
 author: "Chen Chen, Bongshin Lee, Yunhai Wang, Yunjeong Chang, Zhicheng Liu"
 highlightauthor: 
     - "Bongshin Lee"
-journal: IEEE Transactions on Visualization and Computer Graphics (VIS 2023)
+journal: IEEE Transactions on Visualization and Computer Graphics (VIS 2024)
 tags: ["2024"]
-type: "Conference"
+type: "Journal"
 link: "https://doi.org/10.1109/TVCG.2023.3327354"
 draft: false
 ---

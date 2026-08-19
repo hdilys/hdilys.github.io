@@ -2,7 +2,7 @@
 title: "Visualizing Linguistic Diversity of Text Datasets Synthesized by Large Language Models"
 meta_title: ""
 description: ""
-date: 2023-10-01T00:00:00Z
+date: 2023-10-22T00:00:00Z
 image: ""
 categories: ["Data Visualization", "Human-AI Interaction and Collaboration"]
 author: "Emily Reif, Minsuk Kahng, Savvas Petridis"
@@ -13,5 +13,5 @@ honor: []
 tags: ["2023"]
 type: "Conference"
 link: "http://doi.org/10.1109/VIS54172.2023.00056"
-draft: false
+draft: true
 ---

@@ -12,6 +12,6 @@ journal: "arXiv"
 honor: []
 tags: ["2025"]
 type: "Preprint"
-link: "https://arxiv.org/pdf/2506.23443"
+link: "https://arxiv.org/abs/2506.23443"
 draft: false
 ---

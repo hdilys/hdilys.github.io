@@ -2,9 +2,9 @@
 title: "Adversarial Nibbler: An Open Red-Teaming Method for Identifying Diverse Harms in Text-to-Image Generation"
 meta_title: ""
 description: ""
-date: 2024-06-01T00:00:00Z
+date: 2024-06-03T00:00:00Z
 image: ""
-categories: ["Data Visualization", "Human-AI Interaction and Collaboration"]
+categories: ["Human-AI Interaction and Collaboration"]
 author: "Jessica Quaye, Alicia Parrish, Oana Inel, Charvi Rastogi, Hannah Rose Kirk, Minsuk Kahng, Erin van Liemt, Max Bartolo, Jess Tsang, Justin White, Nathan Clement, Rafael Mosquera, Juan Ciro, Vijay Janapa Reddi, Lora Aroyo"
 highlightauthor:
     - "Minsuk Kahng"

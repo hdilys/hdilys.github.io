@@ -91,8 +91,25 @@
 
           <div class="row mt-10 mb-8">
             <h4 class="mb-4">Alumni</h4>
+            <!-- M.S. Students first -->
             {{ range .RegularPages }}
-              {{ if and (eq .Params.roles "Alumni") (not (.Params.collaborator)) }}
+              {{ if and (eq .Params.roles "Alumni") (not (.Params.collaborator)) (eq .Params.display_role "M.S. Student") }}
+                <div class="md:col-6 lg:col-2 mb-8">
+                  {{ partial "components/author-card" . }}
+                </div>
+              {{ end }}
+            {{ end }}
+            <!-- Interns -->
+            {{ range .RegularPages }}
+              {{ if and (eq .Params.roles "Alumni") (not (.Params.collaborator)) (eq .Params.display_role "Intern") }}
+                <div class="md:col-6 lg:col-2 mb-8">
+                  {{ partial "components/author-card" . }}
+                </div>
+              {{ end }}
+            {{ end }}
+            <!-- Visiting Researchers -->
+            {{ range .RegularPages }}
+              {{ if and (eq .Params.roles "Alumni") (not (.Params.collaborator)) (eq .Params.display_role "Visiting Researcher") }}
                 <div class="md:col-6 lg:col-2 mb-8">
                   {{ partial "components/author-card" . }}
                 </div>

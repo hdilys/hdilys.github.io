@@ -8,7 +8,7 @@ categories: ["Data Visualization"]
 author: "Yun Wang, Leixian Shen, Zhengxin You, Xinhuan Shu, Bongshin Lee, John Thompson, Haidong Zhang, Dongmei Zhang"
 highlightauthor: 
     - "Bongshin Lee"
-journal: IEEE Transactions on Visualization and Computer Graphics
+journal: IEEE Transactions on Visualization and Computer Graphics (VIS 2025)
 tags: ["2024"]
 type: "Journal"
 link: "https://ieeexplore.ieee.org/document/10552427"
