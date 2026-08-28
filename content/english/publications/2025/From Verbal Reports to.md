@@ -11,7 +11,7 @@ highlightauthor:
 journal:  Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (UbiComp 2025)
 honor: []
 tags: ["2025"]
-type: "Conference"
+type: "Journal"
 link: "https://doi.org/10.1145/3731749"
 draft: false
 ---

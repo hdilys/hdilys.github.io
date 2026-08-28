@@ -5,14 +5,14 @@
     <div class="container">
       <div class="row mb-8">
         <h4 class="mb-4">Faculties</h4>
-        <!-- Professor -->
+        <!-- Professor (sorted by first name) -->
         {{ $pages := slice }}
         {{ range .RegularPages }}
           {{ if and (eq .Params.roles "Professor") (not (.Params.collaborator)) }}
             {{ $title := .Params.title }}
             {{ $words := split $title " " }}
-            {{ $lastWord := index $words (sub (len $words) 1) }}
-            {{ $pages = $pages | append (dict "Page" . "SortKey" $lastWord) }}
+            {{ $firstWord := index $words 0 }}
+            {{ $pages = $pages | append (dict "Page" . "SortKey" $firstWord) }}
           {{ end }}
         {{ end }}
 
@@ -25,14 +25,12 @@
 
       <div class="row mt-10 mb-8">
         <h4 class="mb-4">M.S. Students</h4>
-        <!-- M.S. Student -->
+        <!-- M.S. Student (sorted by join date) -->
         {{ $pages := slice }}
         {{ range .RegularPages }}
           {{ if and (eq .Params.roles "M.S. Student") (not (.Params.collaborator)) }}
-            {{ $title := .Params.title }}
-            {{ $words := split $title " " }}
-            {{ $lastWord := index $words (sub (len $words) 1) }}
-            {{ $pages = $pages | append (dict "Page" . "SortKey" $lastWord) }}
+            {{ $joinDate := .Params.join_date | default "9999-12-31" }}
+            {{ $pages = $pages | append (dict "Page" . "SortKey" $joinDate) }}
           {{ end }}
         {{ end }}
 
@@ -45,13 +43,19 @@
 
       <div class="row mt-10 mb-8">
         <h4 class="mb-4">Interns</h4>
-        <!-- Intern -->
+        <!-- Intern (sorted by join date) -->
+        {{ $pages := slice }}
         {{ range .RegularPages }}
           {{ if and (eq .Params.roles "Intern") (not (.Params.collaborator)) }}
-            <div class="md:col-6 lg:col-2 mb-14">
-              {{ partial "components/author-card" . }}
-            </div>
+            {{ $joinDate := .Params.join_date | default "9999-12-31" }}
+            {{ $pages = $pages | append (dict "Page" . "SortKey" $joinDate) }}
           {{ end }}
+        {{ end }}
+
+        {{ range sort $pages "SortKey" }}
+          <div class="md:col-6 lg:col-2 mb-14">
+            {{ partial "components/author-card" .Page }}
+          </div>
         {{ end }}
       </div>
 
@@ -99,17 +103,17 @@
                 </div>
               {{ end }}
             {{ end }}
-            <!-- Interns -->
+            <!-- Visiting Researchers -->
             {{ range .RegularPages }}
-              {{ if and (eq .Params.roles "Alumni") (not (.Params.collaborator)) (eq .Params.display_role "Intern") }}
+              {{ if and (eq .Params.roles "Alumni") (not (.Params.collaborator)) (eq .Params.display_role "Visiting Researcher") }}
                 <div class="md:col-6 lg:col-2 mb-8">
                   {{ partial "components/author-card" . }}
                 </div>
               {{ end }}
             {{ end }}
-            <!-- Visiting Researchers -->
+            <!-- Interns -->
             {{ range .RegularPages }}
-              {{ if and (eq .Params.roles "Alumni") (not (.Params.collaborator)) (eq .Params.display_role "Visiting Researcher") }}
+              {{ if and (eq .Params.roles "Alumni") (not (.Params.collaborator)) (eq .Params.display_role "Intern") }}
                 <div class="md:col-6 lg:col-2 mb-8">
                   {{ partial "components/author-card" . }}
                 </div>

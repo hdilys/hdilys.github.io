@@ -8,10 +8,10 @@ author: "Yiwen Wang, Hossein Khayami, Bongshin Lee, Amanda Lazar, Hernisa Kacorr
 highlightauthor: 
     - "Bongshin Lee"
     - "Eun Kyoung Choe"
-journal:  Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (UbiComp 2025)
+journal:  Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (UbiComp 2026)
 honor: []
 tags: ["2025"]
-type: "Conference"
+type: "Journal"
 link: "https://dl.acm.org/doi/abs/10.1145/3770649"
 draft: false
 ---

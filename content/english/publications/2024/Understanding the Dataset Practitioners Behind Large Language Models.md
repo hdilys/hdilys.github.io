@@ -8,7 +8,7 @@ categories: ["Human-AI Interaction and Collaboration"]
 author: "Crystal Qian, Emily Reif, Minsuk Kahng"
 highlightauthor:
     - "Minsuk Kahng"
-journal: "ACM CHI Conference on Human Factors in Computing Systems (CHI 2024)"
+journal: "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA '24)"
 honor: []
 tags: ["2024"]
 type: "Poster & Workshop"

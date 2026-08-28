@@ -8,7 +8,7 @@ categories: ["Data Visualization"]
 author: "Chen Chen, Bongshin Lee, Yunhai Wang, Yunjeong Chang, Zhicheng Liu"
 highlightauthor: 
     - "Bongshin Lee"
-journal: IEEE Transactions on Visualization and Computer Graphics (VIS 2024)
+journal: IEEE Transactions on Visualization and Computer Graphics (VIS 2023)
 tags: ["2024"]
 type: "Journal"
 link: "https://doi.org/10.1109/TVCG.2023.3327354"

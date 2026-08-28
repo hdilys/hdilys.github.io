@@ -1,6 +1,7 @@
 ---
 title: Yoojin Jeon
-roles: Intern
+roles: M.S. Student
+join_date: "2026-09-01"
 email: tmrwu@yonsei.ac.kr
 image: "/images/team/Yoojin Jeon.jpg"
 keyword: "Human-Computer/AI Interaction"

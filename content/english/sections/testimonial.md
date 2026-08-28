@@ -27,7 +27,7 @@ testimonials:
     designation: ""
     day: "April, 2025"
     date: "2025-04-01"
-    content: "6 papers have been accepted to CHI 2025!"
+    content: "4 papers and 2 extended abstracts have been accepted to CHI 2025!"
 
   - name: "NAACL 2025"
     type: "Publication"
@@ -43,7 +43,7 @@ testimonials:
     designation: ""
     day: "Oct, 2025"
     date: "2025-10-01"
-    content: "2 papers have been accepted to UbiComp 2025!"
+    content: "1 paper has been accepted to UbiComp 2025!"
 
   - name: "New Member"
     type: "News"
@@ -171,7 +171,15 @@ testimonials:
     designation: ""
     day: "July, 2026"
     date: "2026-07-01"
-    content: "9 papers have been accepted to IEEE VIS 2026!"
+    content: "4 full papers and 1 short paper have been accepted to IEEE VIS 2026!"
+
+  - name: "UbiComp 2026"
+    type: "Publication"
+    color: "#0078D7"
+    designation: ""
+    day: "Sep, 2026"
+    date: "2026-09-01"
+    content: "1 paper has been accepted to UbiComp 2026!"
 
   - name: "New Member"
     type: "News"

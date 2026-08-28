@@ -1,6 +1,7 @@
 ---
 title: Jeong Won Ha
 roles: Intern
+join_date: "2025-12-01"
 email: jha@yonsei.ac.kr
 image: "/images/team/Jeongwon Ha.jpg"
 keyword: "Human-Computer Interaction, Health Informatics"

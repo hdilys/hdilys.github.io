@@ -8,7 +8,7 @@ categories: ["Human-AI Interaction and Collaboration"]
 author: "Crystal Qian, Michael Xieyang Liu, Emily Reif, Grady Simon, Nada Hussein, Nathan Clement, James Wexler, Carrie J. Cai, Michael Terry, Minsuk Kahng"
 highlightauthor:
     - "Minsuk Kahng"
-journal: "ACM CHI Conference on Human Factors in Computing Systems (CHI 2025)"
+journal: "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA '25)"
 honor: []
 tags: ["2025"]
 type: "Poster & Workshop"

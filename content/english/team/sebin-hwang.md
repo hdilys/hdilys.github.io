@@ -1,6 +1,7 @@
 ---
 title: Sebin Hwang
 roles: M.S. Student
+join_date: "2025-09-01"
 email: ssebinhwang@gmail.com
 image: "/images/team/Sebin Hwang.jpg"
 keyword: "Human-AI Interaction, Data Visualization, Human-Centered Design"

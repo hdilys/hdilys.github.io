@@ -8,7 +8,7 @@ categories: ["Data Visualization"]
 author: "Dae Hyun Kim, Seulgi Choi, Juho Kim, Vidya Setlur, Maneesh Agrawala"
 highlightauthor: 
     - "Dae Hyun Kim"
-journal: "IEEE Transactions on Visualization and Computer Graphics (VIS 2024)"
+journal: "IEEE Transactions on Visualization and Computer Graphics (VIS 2023)"
 honor: []
 tags: ["2024"]
 type: "Journal"

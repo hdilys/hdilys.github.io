@@ -8,7 +8,7 @@ categories: ["Data Visualization", "Human-AI Interaction and Collaboration"]
 author: "Minsuk Kahng, Ian Tenney, Mahima Pushkarna, Michael Xieyang Liu, James Wexler, Emily Reif, Krystal Kallarackal, Minsuk Chang, Michael Terry, Lucas Dixon"
 highlightauthor:
     - "Minsuk Kahng"
-journal: "ACM CHI Conference on Human Factors in Computing Systems (CHI 2024)"
+journal: "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA '24)"
 honor: []
 tags: ["2024"]
 type: "Poster & Workshop"

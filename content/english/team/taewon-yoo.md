@@ -1,6 +1,7 @@
 ---
 title: Taewon Yoo
 roles: M.S. Student
+join_date: "2025-03-01"
 email: twyoo@yonsei.ac.kr
 image: "/images/team/Taewon Yoo.JPG"
 keyword: "Human-AI Interaction, Responsible AI"

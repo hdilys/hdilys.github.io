@@ -10,7 +10,7 @@ highlightauthor:
     - "Bongshin Lee"
 journal: ACM CHI Conference on Human Factors in Computing Systems (CHI 2024)
 tags: ["2024"]
-type: "Poster & Workshop"
+type: "Conference"
 link: "https://doi.org/10.1145/3613904.3642730"
 draft: false
 ---

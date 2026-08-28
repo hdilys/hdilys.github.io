@@ -1,6 +1,7 @@
 ---
 title: Minjae Lee
 roles: M.S. Student
+join_date: "2025-09-01"
 email: alswoscott419@gmail.com
 image: "/images/team/Minjae Lee.jpg"
 keyword: "Human-AI Interaction and Collaboration, Responsible AI"

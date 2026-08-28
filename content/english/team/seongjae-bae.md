@@ -1,6 +1,7 @@
 ---
 title: Seongjae Bae
 roles: M.S. Student
+join_date: "2025-03-01"
 email: qotjdwo7151@gmail.com
 image: "/images/team/Seongjae Bae.png"
 keyword: "Human-Data Interaction, Mobile Data"
